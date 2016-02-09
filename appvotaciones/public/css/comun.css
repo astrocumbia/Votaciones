@@ -1,0 +1,231 @@
+body{
+	/*background-color:#ABBC85;*/
+	color:whitesmoke;
+	text-align:center;
+}
+#SanSebastiandelOeste{
+	background: url(../img/pueblosmagicos/SanSebastiandelOeste.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color:whitesmoke;
+}
+
+#CapulalpamdeMendez{
+	background: url(../img/pueblosmagicos/CapulalpamdeMendez.jpg) no-repeat center center fixed; 
+	/*-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;*/
+}
+#Tacambaro{
+	background: url(../img/pueblosmagicos/Tacambaro.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#Tapalpa{
+	background: url(../img/pueblosmagicos/Tapalpa.jpg) no-repeat center center fixed; 
+	/*-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;*/
+}
+
+
+#Taxco{
+	background: url(../img/pueblosmagicos/Taxco.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#SantaClaradelCobre{
+	background: url(../img/pueblosmagicos/SantaClaradelCobre.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#Jiquilpan{
+	background: url(../img/pueblosmagicos/Jiquilpan.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#Xicotepec{
+	background: url(../img/pueblosmagicos/Xicotepec.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#ValledeBravo{
+	background: url(../img/pueblosmagicos/ValledeBravo.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+
+#Huichapan{
+	background: url(../img/pueblosmagicos/Huichapan.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#Tequisquiapan{
+	background: url(../img/pueblosmagicos/Tequisquiapan.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#Zacatlan{
+	background: url(../img/pueblosmagicos/Zacatlan.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#Salvatierra{
+	background: url(../img/pueblosmagicos/Salvatierra.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#RealdeAsientos{
+	background: url(../img/pueblosmagicos/RealdeAsientos.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#Pahuatlan{
+	background: url(../img/pueblosmagicos/Pahuatlan.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+
+#MineraldelChico{
+	background: url(../img/pueblosmagicos/MineraldelChico.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#JalpandeSerra{
+	background: url(../img/pueblosmagicos/JalpandeSerra.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+
+#HuascadeOcampo{
+	background: url(../img/pueblosmagicos/HuascadeOcampo.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#ValledeBravo{
+	background: url(../img/pueblosmagicos/ValledeBravo.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#menu{
+	margin-top: 20px;
+	padding-top: 20px;
+	/*height: 300px;*/
+	/*background: lightgray;*/
+	border-radius: 10px;
+	padding-bottom: 50px;
+}
+#menuvariable{
+	margin-top: 1%;
+	background: lightgray;
+	border-radius: 3px;
+}
+#resultados{
+	background: whitesmoke;
+	color:black;
+}
+#actividadeselegidas .col-md-2{
+	/*margin: 0 auto;*/
+}
+#actividadeselegidas img{
+	/*margin: 0 auto;*/
+}
+.imagen{
+	border-radius: 3px;
+	border:1px solid;
+}
+
+.ventana{
+	/*width:70%; */
+	/*height: 400px;*/
+	/*background-color:#849B89;*/
+	/*position: absolute;*/
+  	/*top: 40%; */
+  	/*left: 50%;*/
+  	/*transform: translate(-50%, -50%);*/
+	border-radius:10px;
+	/*background:url("../img/parras.jpg");*/
+	/*background-repeat:no-repeat;*/
+	/*background-size:contain;*/
+	/*background-position:center;*/
+}
+.ventana h1,h3,h2{
+	text-align:center;
+}
+.ventana img{
+	/*border-radius:10px;*/
+}
+.ventana a{
+	margin:0 auto;
+}
+/*#regiondiv{
+	background:url("../img/parras.jpg");
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#estadodiv{
+	background:url("../img/p2.jpg") no-repeat;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#transportediv{
+	background:url("../img/camino.jpg") no-repeat;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}*/
