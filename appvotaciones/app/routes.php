@@ -33,3 +33,7 @@ Route::get('test', function()
 {
 	return View::make('pruebas.test');
 });
+Route::get('test', function()
+{
+	return View::make('pruebas.test');
+});
