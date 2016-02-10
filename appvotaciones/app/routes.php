@@ -16,6 +16,10 @@ Route::get('/', function()
 	return View::make('pruebas.test');
 });
 
+Route::get('login', function()
+{
+	return View::make('login.login');
+});
 
 Route::group(array('prefix' => 'candidato'), function()
 {
