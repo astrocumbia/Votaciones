@@ -34,7 +34,7 @@ Route::get('votante', function()
 	return View::make('loginvotante');
 });
 
-<<<<<<< HEAD
+
 /*rutas mata */
 
 Route::get('funcionarios', function()
