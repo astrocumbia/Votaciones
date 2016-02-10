@@ -29,3 +29,7 @@ Route::group(array('prefix' => 'candidato'), function()
 	});
 
 });
+Route::get('test', function()
+{
+	return View::make('pruebas.test');
+});
