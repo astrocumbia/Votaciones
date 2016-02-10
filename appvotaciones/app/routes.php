@@ -16,11 +16,10 @@ Route::get('/', function()
 	return View::make('pruebas.test');
 });
 
-<<<<<<< HEAD
 Route::get('login', function()
 {
 	return View::make('login.login');
-=======
+});
 
 Route::group(array('prefix' => 'candidato'), function()
 {
@@ -44,5 +43,4 @@ Route::get('votante', function()
 Route::get('funcionarios', function()
 {
 	return View::make('funcionarios.create_funcionarios');
->>>>>>> 1f5eec8b49d9c381eac4ed684dc089065e07fa33
 });
