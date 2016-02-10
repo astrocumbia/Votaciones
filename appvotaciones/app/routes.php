@@ -40,6 +40,7 @@ Route::get('votante', function()
 
 /*rutas mata */
 
+
 Route::get('funcionarios', function()
 {
 	return View::make('funcionarios.create_funcionarios');
