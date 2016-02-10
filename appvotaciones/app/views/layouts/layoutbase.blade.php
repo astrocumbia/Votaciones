@@ -8,6 +8,7 @@
 	<link href="{{url()."/favicon.ico"}}" rel="shortcut icon" type="image/vnd.microsoft.icon" />
 	
 	{{ HTML::style('css/bootstrap.css');}}
+	{{ HTML::style('css/pruebas.css');}}
     {{ HTML::style('css/jquery-ui.css');}}
 	{{ HTML::script('js/jquery-2.1.3.js');}}
 	<script type="text/javascript" src="{{url('js/bootstrap.js')}}"></script>
