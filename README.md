@@ -1,6 +1,12 @@
 # Votaciones
 Sistema Para realizar votaciones electronicas
 
+#Lineas para crear usuarios 
+CREATE USER 'seguridad'@'localhost' IDENTIFIED BY 'seguridad';
+
+#Linea para dar permisos al usuario
+GRANT ALL PRIVILEGES ON seguridad . * TO 'seguridad'@'localhost';
+
 
 #8 de febrero 2016 8:36 p.m
 Agregue los css y js a la carpeta public.

@@ -6,11 +6,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href="{{url()."/favicon.ico"}}" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+	
 	{{ HTML::style('css/bootstrap.css');}}
+	{{ HTML::style('css/pruebas.css');}}
     {{ HTML::style('css/jquery-ui.css');}}
+<<<<<<< HEAD
     {{-- css pacheco --}}
     {{ HTML::style('css/login.css');}}
     {{-- aqui termina estilos pacheco --}}
+=======
+	{{ HTML::script('js/jquery-2.1.3.js');}}
+	<script type="text/javascript" src="{{url('js/bootstrap.js')}}"></script>
+
+
+>>>>>>> 1f5eec8b49d9c381eac4ed684dc089065e07fa33
 	<title>Votaciones</title>
 	@yield("estilos")
 	@yield("campodeprueba")

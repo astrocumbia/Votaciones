@@ -12,8 +12,8 @@ CREATE TABLE IF NOT EXISTS `DBSistema`.`Partido` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(150) NULL,
   `logo` VARCHAR(70) NULL,
-  `created_at` TIMESTAMP NOT NULL,
-  `updated_at` TIMESTAMP NOT NULL,
+  `created_at` TIMESTAMP NULL,
+  `updated_at` TIMESTAMP NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -25,8 +25,8 @@ CREATE TABLE IF NOT EXISTS `DBSistema`.`Candidato` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `Nombre` VARCHAR(100) NULL,
   `Partido_id` INT NOT NULL,
-  `created_at` TIMESTAMP NOT NULL,
-  `updated_at` TIMESTAMP NOT NULL,
+  `created_at` TIMESTAMP NULL,
+  `updated_at` TIMESTAMP NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_Candidato_Partido_idx` (`Partido_id` ASC),
   CONSTRAINT `fk_Candidato_Partido`
@@ -44,8 +44,8 @@ CREATE TABLE IF NOT EXISTS `DBSistema`.`Administrador` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `usuario` VARCHAR(150) NULL,
   `password` VARCHAR(255) NULL,
-  `created_at` TIMESTAMP NOT NULL,
-  `updated_at` TIMESTAMP NOT NULL,
+  `created_at` TIMESTAMP NULL,
+  `updated_at` TIMESTAMP NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -58,8 +58,8 @@ CREATE TABLE IF NOT EXISTS `DBSistema`.`Jornada` (
   `inicio` DATETIME NULL,
   `fin` DATETIME NULL,
   `nombre` VARCHAR(100) NULL,
-  `created_at` TIMESTAMP NOT NULL,
-  `updated_at` TIMESTAMP NOT NULL,
+  `created_at` TIMESTAMP NULL,
+  `updated_at` TIMESTAMP NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -73,8 +73,8 @@ CREATE TABLE IF NOT EXISTS `DBSistema`.`lugar` (
   `municipio` INT NULL,
   `localidad` INT NULL,
   `seccion` INT NULL,
-  `created_at` TIMESTAMP NOT NULL,
-  `updated_at` TIMESTAMP NOT NULL,
+  `created_at` TIMESTAMP NULL,
+  `updated_at` TIMESTAMP NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -88,8 +88,8 @@ CREATE TABLE IF NOT EXISTS `DBSistema`.`Casilla` (
   `password` VARCHAR(255) NULL,
   `Jornada_id` INT NOT NULL,
   `lugar_id` INT NOT NULL,
-  `created_at` TIMESTAMP NOT NULL,
-  `updated_at` TIMESTAMP NOT NULL,
+  `created_at` TIMESTAMP NULL,
+  `updated_at` TIMESTAMP NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_Casilla_Jornada1_idx` (`Jornada_id` ASC),
   INDEX `fk_Casilla_lugar1_idx` (`lugar_id` ASC),
@@ -114,8 +114,8 @@ CREATE TABLE IF NOT EXISTS `DBSistema`.`Voto` (
   `time` TIMESTAMP NULL,
   `Candidato_id` INT NOT NULL,
   `Casilla_id` INT NOT NULL,
-  `created_at` TIMESTAMP NOT NULL,
-  `updated_at` TIMESTAMP NOT NULL,
+  `created_at` TIMESTAMP NULL,
+  `updated_at` TIMESTAMP NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_Voto_Candidato1_idx` (`Candidato_id` ASC),
   INDEX `fk_Voto_Casilla1_idx` (`Casilla_id` ASC),
@@ -141,8 +141,8 @@ CREATE TABLE IF NOT EXISTS `DBSistema`.`Funcionario_casilla` (
   `huella` VARCHAR(300) NULL,
   `password` VARCHAR(255) NULL,
   `Casilla_id` INT NOT NULL,
-  `created_at` TIMESTAMP NOT NULL,
-  `updated_at` TIMESTAMP NOT NULL,
+  `created_at` TIMESTAMP NULL,
+  `updated_at` TIMESTAMP NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_Funcionario_casilla_Casilla1_idx` (`Casilla_id` ASC),
   CONSTRAINT `fk_Funcionario_casilla_Casilla1`
@@ -159,8 +159,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `DBSistema`.`Votado` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `clave_elector` VARCHAR(255) NULL,
-  `created_at` TIMESTAMP NOT NULL,
-  `updated_at` TIMESTAMP NOT NULL,
+  `created_at` TIMESTAMP NULL,
+  `updated_at` TIMESTAMP NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 

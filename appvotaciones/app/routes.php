@@ -16,7 +16,33 @@ Route::get('/', function()
 	return View::make('pruebas.test');
 });
 
+<<<<<<< HEAD
 Route::get('login', function()
 {
 	return View::make('login.login');
+=======
+
+Route::group(array('prefix' => 'candidato'), function()
+{
+	//RUTAS IRVIN
+	Route::get('add',function(){
+		return View::make('candidatos.add');
+	});
+
+	Route::get('show',function(){
+		return View::make('candidatos.show');
+	});
+
+});
+Route::get('votante', function()
+{
+	return View::make('loginvotante');
+});
+
+/*rutas mata */
+
+Route::get('funcionarios', function()
+{
+	return View::make('funcionarios.create_funcionarios');
+>>>>>>> 1f5eec8b49d9c381eac4ed684dc089065e07fa33
 });
