@@ -15,3 +15,7 @@ Route::get('/', function()
 {
 	return View::make('pruebas.test');
 });
+Route::get('votante', function()
+{
+	return View::make('loginvotante');
+});

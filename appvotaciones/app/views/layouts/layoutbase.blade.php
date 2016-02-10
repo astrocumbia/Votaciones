@@ -7,6 +7,7 @@
 
 	<link href="{{url()."/favicon.ico"}}" rel="shortcut icon" type="image/vnd.microsoft.icon" />
 	{{ HTML::style('css/bootstrap.css');}}
+	{{ HTML::style('css/pruebas.css');}}
     {{ HTML::style('css/jquery-ui.css');}}
 	<title>Votaciones</title>
 	@yield("estilos")
