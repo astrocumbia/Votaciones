@@ -44,3 +44,8 @@ Route::get('funcionarios', function()
 {
 	return View::make('funcionarios.create_funcionarios');
 });
+
+Route::get('casilla', function()
+{
+	return View::make('casilla.create_casilla');
+});
