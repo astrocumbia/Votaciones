@@ -15,3 +15,17 @@ Route::get('/', function()
 {
 	return View::make('pruebas.test');
 });
+
+
+Route::group(array('prefix' => 'candidato'), function()
+{
+	//RUTAS IRVIN
+	Route::get('add',function(){
+		return View::make('candidatos.add');
+	});
+
+	Route::get('show',function(){
+		return View::make('candidatos.show');
+	});
+
+});
