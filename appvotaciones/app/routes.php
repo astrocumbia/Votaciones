@@ -33,3 +33,10 @@ Route::get('test', function()
 {
 	return View::make('pruebas.test');
 });
+
+/*rutas mata */
+
+Route::get('funcionarios', function()
+{
+	return View::make('funcionarios.create_funcionarios');
+});
