@@ -29,11 +29,8 @@ Route::group(array('prefix' => 'candidato'), function()
 	});
 
 });
-Route::get('test', function()
+Route::get('votante', function()
 {
-	return View::make('pruebas.test');
+	return View::make('loginvotante');
 });
-Route::get('test', function()
-{
-	return View::make('pruebas.test');
-});
+
