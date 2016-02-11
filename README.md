@@ -7,16 +7,23 @@ Sistema Para realizar votaciones electronicas
 En la carpeta views se agregaron la siguientes carpetas
 
 views --+
+
         +->administrador
+
+
         +->funcionariosdecasilla
+        
         +->reportes
+        
         +->votante
 Descripción de cada carpeta para que agreguen las vistas. Entre parentesis les describo que es lo que se va a mostrar a cada una. Revisen el modelo ER para saber que campos van a agregar. id,created_ad y updated_ad ignorenlos no los incluyan en sus vistas. {{ Si el archivo no existe, creenlo porfavor. }}
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 administrador-+
             +->indexadminstrador.php 
+
                 (pagina principal de el administrador esta vista se mostrara despues de loguear)
+
             +->nuevajornada.blade.php
                 (formulario para crear una jornada)
             +->nuevolugar.blade.php
