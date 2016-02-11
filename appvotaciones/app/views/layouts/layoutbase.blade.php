@@ -9,13 +9,13 @@
 	
 	{{ HTML::style('css/bootstrap.css');}}
 	{{ HTML::style('css/pruebas.css');}}
-    {{ HTML::style('css/jquery-ui.css');}}
-    {{-- css pacheco --}}
-    {{ HTML::style('css/login.css');}}
-    {{-- aqui termina estilos pacheco --}}
+  {{ HTML::style('css/jquery-ui.css');}}
+  {{-- css pacheco --}}
+  {{ HTML::style('css/login.css');}}
+  {{-- aqui termina estilos pacheco --}}
 	{{-- {{ HTML::script('js/jquery-2.1.3.js');}} --}}
 	<title>Votaciones</title>
-	@yield("estilos")
+	@yield("css")
 	@yield("campodeprueba")
 </head>
 @yield("body")

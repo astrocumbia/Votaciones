@@ -29,7 +29,6 @@
 		o si lo van a crear ustedes pueden hacerlo normalmente con <script> </script>
 		**Recuerden que el js debe estar dentro de la carpeta js en public
 	 --}}
-	{{ HTML::script('js/algun_js_de_emeplo.js') }}
 	<script>
 		$( document ).ready(function() {
 		    console.log( "ready!" );
