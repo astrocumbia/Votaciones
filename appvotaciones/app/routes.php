@@ -65,7 +65,7 @@ Route::group(array('prefix' => 'administrador'), function()
 
 Route::group(array('prefix' => 'funcionario'), function()
 {
-	Route::get('add',function(){
+	Route::get('index',function(){
 		return View::make('funcionariodecasilla.loginfuncionariodecasilla');
 	});
 
