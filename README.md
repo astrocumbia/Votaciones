@@ -3,7 +3,7 @@ Sistema Para realizar votaciones electronicas
 
 
 Mensaje:  
-    Modifique el script de la base de datos, vuelvanlo a correr.
+    Modifiqué el script de la base de datos, vuélvanlo a correr.
 
         "mysql -u root -p < DBSistema.sql"
 
