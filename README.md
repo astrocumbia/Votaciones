@@ -15,10 +15,15 @@ Mensaje:
         "/getlogueo"
 
 Si todo es correcto los llevará a otra vista donde podrán cerrar sesion. 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#Cambios 11 de febrero {Alan}
+    Arreglado un problema al incrustar javascript, si necesitan agregar un 'js' a su vista lo pueden hacer de la siguiente manera.
+![alt tag](https://raw.github.com/positr0nix/Votaciones/ejemplojs.png)
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#Cambios 10 de febrero 
+#Cambios 10 de febrero  {Alan}
 En la carpeta views se agregaron la siguientes carpetas
 
 views --+
