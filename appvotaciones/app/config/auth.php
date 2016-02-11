@@ -28,7 +28,7 @@ return array(
 	|
 	*/
 
-	'model' => 'User',
+	'model' => 'Funcionariocasilla',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -41,7 +41,9 @@ return array(
 	|
 	*/
 
-	'table' => 'users',
+	'table' => 'Funcionario_casilla',
+	'username' => 'nombre',
+	'password' => 'password',
 
 	/*
 	|--------------------------------------------------------------------------

@@ -1,6 +1,21 @@
 # Votaciones
 Sistema Para realizar votaciones electronicas
 
+
+Mensaje:  
+    Modifique el script de la base de datos, vuelvanlo a correr.
+
+        "mysql -u root -p < DBSistema.sql"
+
+    Después de que corran esa linea van a ir a la siguiente ruta.
+                    "/crearunusuario"
+    Esto creará un usuario, de username administrador y pw '123456'
+    Para revisar qué el logueo de prueba este bien, abren la ruta
+
+        "/getlogueo"
+
+Si todo es correcto los llevará a otra vista donde podrán cerrar sesion. 
+
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #Cambios 10 de febrero 

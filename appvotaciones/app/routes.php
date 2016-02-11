@@ -91,3 +91,16 @@ Route::group(array('prefix' => 'votante'), function()
 		return View::make('votante.agradecimiento');
 	});
 });
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+			/*Rutas para pruebas de logueo*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+Route::get('getlogueo', function()
+{
+	return View::make('pruebas.login');
+});
+Route::post('postlogueo', array('uses'=>'LoginController@login'));
+Route::get('testlogout', array('uses'=>'LoginController@logout'));
+Route::get('crearunusuario', array('uses'=>'LoginController@crearunusuario'));
