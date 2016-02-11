@@ -10,7 +10,6 @@ views --+
 
         +->administrador
 
-
         +->funcionariosdecasilla
         
         +->reportes
@@ -19,11 +18,11 @@ views --+
 Descripción de cada carpeta para que agreguen las vistas. Entre parentesis les describo que es lo que se va a mostrar a cada una. Revisen el modelo ER para saber que campos van a agregar. id,created_ad y updated_ad ignorenlos no los incluyan en sus vistas. {{ Si el archivo no existe, creenlo porfavor. }}
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 administrador-+
+            
             +->indexadminstrador.php 
-
                 (pagina principal de el administrador esta vista se mostrara despues de loguear)
-
             +->nuevajornada.blade.php
                 (formulario para crear una jornada)
             +->nuevolugar.blade.php
@@ -43,18 +42,22 @@ administrador-+
             +->verfuncionarios.blade.php //Esta vista dejenla para después.
                 (tabla para ver funcionarios actuales)
 
+
 funcionariodecasilla-+
+
             +->loginfuncionariodecasilla
                     (pagina inicial del sistema en el dia de las votaciones)
             +->
 
 votante-------+
+
             +->introducirclaveelector.blade.php
                 (formulario para que el votante introduzca su clave de elector)
             +->vercandidatos.blade.php
                 (ver los candidatos que tiene para votar, recuerden incluir una imagen que seria la del partido.)
             +->agradecimiento.blade.php
                 (Vista que muestre que el voto se realizo correctamente)
+
 reportes------+
             +->
 
