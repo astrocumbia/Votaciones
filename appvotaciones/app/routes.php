@@ -49,6 +49,9 @@ Route::group(array('prefix' => 'administrador'), function()
 	Route::get('vercandidatos',function(){
 		return View::make('administrador.vercandidatos');
 	});	
+	Route::get('verpartidos',function(){
+		return View::make('administrador.verpartidos');
+	});	
 	Route::get('vercasillas',function(){
 		return View::make('administrador.vercasillas');
 	});
