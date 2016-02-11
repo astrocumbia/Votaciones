@@ -21,18 +21,17 @@ Route::get('login', function()
 	return View::make('login.login');
 });
 
+
+/**
+*	RUTAS CANDIDATOS (IRVIN)
+*/
 Route::group(array('prefix' => 'candidato'), function()
 {
-	//RUTAS IRVIN
-	Route::get('add',function(){
-		return View::make('candidatos.add');
-	});
+	route::get('/',array('uses' => 'AdminController@showCandidato' ) );
 
-	Route::get('show',function(){
-		return View::make('candidatos.show');
-	});
-
+	Route::post('store',  array('uses' => 'AdminController@storeCandidato' ) );
 });
+
 Route::get('votante', function()
 {
 	return View::make('loginvotante');

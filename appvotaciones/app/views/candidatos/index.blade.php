@@ -1,6 +1,8 @@
 @extends('layouts.layoutbase')
 @section('body')
 
+
+
 	<div class="container">
 		<div class="text-center">
 			<h3>Candidatos</h3>
@@ -23,15 +25,18 @@
 			  		<th>Candidato</th>
 			  		<th>Partido</th>
 			  		<th>Logo</th>
+			  		<th>Registrado</th>
 			  		<th>Acciones</th>
 			  	</tr>
 			  </thead>
 			
 			  <tbody>
+			  @foreach( $candidatos as $candidato )
 			  	<tr>
-			  		<td>Juan Camaney</td>
+			  		<td>{{$candidato->Nombre}}</td>
 			  		<td>Partido Social Democrata</td>
 			  		<td>none</td>
+			  		<td>{{$candidato->created_at}}</td>
 			  		<td>
 			  			<button type="button" class="btn btn-warning">
 			  				<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
@@ -41,43 +46,7 @@
 			  			</button>
 			  		</td>
 			  	</tr>
-			  	<tr>
-			  		<td>Juan Camaney</td>
-			  		<td>Partido Social Democrata</td>
-			  		<td>none</td>
-			  		<td>
-			  			<button type="button" class="btn btn-warning">
-			  				<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-			  			</button>
-			  			<button type="button" class="btn btn-danger">
-			  				<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-			  			</button>
-			  		</td>
-			  	</tr><tr>
-			  		<td>Juan Camaney</td>
-			  		<td>Partido Social Democrata</td>
-			  		<td>none</td>
-			  		<td>
-			  			<button type="button" class="btn btn-warning">
-			  				<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-			  			</button>
-			  			<button type="button" class="btn btn-danger">
-			  				<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-			  			</button>
-			  		</td>
-			  	</tr><tr>
-			  		<td>Juan Camaney</td>
-			  		<td>Partido Social Democrata</td>
-			  		<td>none</td>
-			  		<td>
-			  			<button type="button" class="btn btn-warning">
-			  				<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-			  			</button>
-			  			<button type="button" class="btn btn-danger">
-			  				<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-			  			</button>
-			  		</td>
-			  	</tr>
+			  @endforeach
 			  </tbody>
 			</table>
 		</div>
