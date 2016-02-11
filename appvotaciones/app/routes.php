@@ -21,32 +21,73 @@ Route::get('login', function()
 	return View::make('login.login');
 });
 
-Route::group(array('prefix' => 'candidato'), function()
+/*++++++++++++++++++++++++++ Vistas administrador ++++++++++++++++++++++++++*/
+/*+++++++ La ruta para ver estas vistas quedaría 'administrador/* ' donde * es la ruta pasada en el get, por ejemplo el index quedaría "administrador/index" ++++++++++++++*/
+Route::group(array('prefix' => 'administrador'), function()
 {
-	//RUTAS IRVIN
+	Route::get('index',function(){
+		return View::make('administrador.indexadminstrador');
+	});
+	Route::get('nuevajornada',function(){
+		return View::make('administrador.nuevajornada');
+	});
+	Route::get('nuevolugar',function(){
+		return View::make('administrador.nuevolugar');
+	});
+	Route::get('nuevacasilla',function(){
+		return View::make('administrador.nuevacasilla');
+	});
+	Route::get('nuevopartido',function(){
+		return View::make('administrador.nuevopartido');
+	});
+	Route::get('nuevocandidato',function(){
+		return View::make('administrador.nuevocandidato');
+	});
+	Route::get('nuevofuncionario',function(){
+		return View::make('administrador.nuevofuncionario');
+	});
+	Route::get('vercandidatos',function(){
+		return View::make('administrador.vercandidatos');
+	});	
+	Route::get('vercasillas',function(){
+		return View::make('administrador.vercasillas');
+	});
+	Route::get('verfuncionarios',function(){
+		return View::make('administrador.verfuncionarios');
+	});
+});
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/*++++++++++++++++++++++++++ Vistas funcionariodecasilla ++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+Route::group(array('prefix' => 'funcionario'), function()
+{
 	Route::get('add',function(){
-		return View::make('candidatos.add');
-	});
-
-	Route::get('show',function(){
-		return View::make('candidatos.show');
+		return View::make('funcionariodecasilla.loginfuncionariodecasilla');
 	});
 
 });
-Route::get('votante', function()
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+/*++++++++++++++++++++++++++ Vistas votante ++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+Route::group(array('prefix' => 'votante'), function()
 {
-	return View::make('loginvotante');
-});
-
-/*rutas mata */
-
-
-Route::get('funcionarios', function()
-{
-	return View::make('funcionarios.create_funcionarios');
-});
-
-Route::get('casilla', function()
-{
-	return View::make('casilla.create_casilla');
+	Route::get('index',function(){
+		return View::make('votante.introducirclaveelector');
+	});
+	Route::get('candidatos',function(){
+		return View::make('votante.vercandidatos');
+	});
+	Route::get('gracias',function(){
+		return View::make('votante.agradecimiento');
+	});
 });
