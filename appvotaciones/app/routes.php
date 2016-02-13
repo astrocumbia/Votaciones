@@ -43,7 +43,7 @@ Route::group(array('prefix' => 'administrador'), function()
 	Route::get('nuevofuncionario',function(){
 		return View::make('administrador.nuevofuncionario');
 	});
-	Route::get('nuevofuncionario',function(){
+	Route::get('verfuncionario',function(){
 		return View::make('administrador.verfuncionario');
 	});
 	Route::get('vercandidatos',function(){
