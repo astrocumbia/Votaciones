@@ -33,6 +33,7 @@ class CasillaTableSeeder extends Seeder {
                     'updated_at' => \Carbon\Carbon::now()->toDateTimeString() 
                 ));
               $casilla = Casilla::create(array(
+                    'id'=>$i,
                     'MAC'=>$faker->uuid,
                     'password'=>Hash::make('123456123456123456'),
                     'Jornada_id'=>$jornada->id,

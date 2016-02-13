@@ -18,6 +18,7 @@
 --
 -- Table structure for table `Administrador`
 --
+USE `DBSistema` ;
 
 DROP TABLE IF EXISTS `Administrador`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
