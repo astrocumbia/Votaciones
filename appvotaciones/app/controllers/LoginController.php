@@ -11,11 +11,10 @@ class LoginController extends BaseController {
 	
 
 	public function login(){
-		$userdata = array(
-			'nombre' => Input::get('nombre'),
-			'password' => Input::get('password'),
-			);
-		$log = Auth::attempt( array('nombre' => Input::get('nombre'),'password' => Input::get('password')) );
+		$user = Input::get('nombre');
+        $password = Input::get('password');
+
+		$log = Auth::attempt(     array('nombre' => $user,'password'=>$password  ) );
 		// var_dump($log);
 		if ($log) {
 			return View::make('pruebas.sesioniniciada');
@@ -46,7 +45,7 @@ class LoginController extends BaseController {
 			echo "El usuario ya existe";
 			return;
 		}
-		DB::table('Lugar')->insert(array(
+		DB::table('lugar')->insert(array(
             'id'    => 1,
             'estado'=>'administrador',
             'municipio' => 'huajuapan',
@@ -77,7 +76,7 @@ class LoginController extends BaseController {
             'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
         ));
 
-		DB::table('Funcionario_Casilla')->insert(array(
+		DB::table('Funcionario_casilla')->insert(array(
             'id'    => 1,
             'nombre'=>'administrador',
             'password' => Hash::make('123456'),
@@ -86,8 +85,8 @@ class LoginController extends BaseController {
             'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
         ));
-        echo "Usuario creado";
-        return View::make('pruebas.mensaje');
+        $mensaje =  "Usuario creado";
+        return View::make('pruebas.mensaje')->with('mensaje',$mensaje);
 	}
 
 	
