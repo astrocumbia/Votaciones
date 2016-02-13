@@ -59,36 +59,45 @@ class LoginController extends BaseController {
   //           'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
   //       ));
 		// DB::table('Casilla')->insert(array(
-  //           'id'    => 1,
+  //           'id'    => 2,
   //           'lugar_id' => 1,
   //           'jornada_id'=>1,            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
   //           'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
   //       ));
 
-		// DB::table('Funcionario_casilla')->insert(array(
-  //           'id'    => 1,
-  //           'nombre'=>'administrador',
-  //           'password' => Hash::make('123456'),
-  //           // 'jornada_id'=>1,
-  //           'Casilla_id'=>1,
-  //           'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-  //           'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
-  //       ));
-        DB::table('Funcionario_casilla')->insert(array(
-            'id'    => 1,
-            'nombre'=>'arturo',
+		    DB::table('Funcionario_casilla')->insert(array(
+            'id'    => 10,
+            'nombre'=>'galleta',
             'password' => Hash::make('123456'),
             // 'jornada_id'=>1,
-            'Casilla_id'=>1,
+            'Casilla_id'=>2,
             'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
         ));
         DB::table('Funcionario_casilla')->insert(array(
-            'id'    => 1,
-            'nombre'=>'matadamas',
+            'id'    => 11,
+            'nombre'=>'hunter',
             'password' => Hash::make('123456'),
             // 'jornada_id'=>1,
-            'Casilla_id'=>1,
+            'Casilla_id'=>2,
+            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        ));
+        DB::table('Funcionario_casilla')->insert(array(
+            'id'    => 12,
+            'nombre'=>'emiliano',
+            'password' => Hash::make('123456'),
+            // 'jornada_id'=>1,
+            'Casilla_id'=>2,
+            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        ));
+        DB::table('Funcionario_casilla')->insert(array(
+            'id'    => 13,
+            'nombre'=>'arena',
+            'password' => Hash::make('123456'),
+            // 'jornada_id'=>1,
+            'Casilla_id'=>2,
             'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
         ));

@@ -90,9 +90,12 @@ Route::group(array('prefix' => 'votante'), function()
 	Route::get('gracias',function(){
 		return View::make('votante.agradecimiento');
 	});
-	Route::get('principal',function(){
-		return View::make('votante.principal');
-	});
+	Route::get('index', array('uses'=>'VotanteController@index'));
+	Route::post('casilla/test', array('uses'=>'VotanteController@pruebaajax'));
+
+	// Route::get('principal',function(){
+	// 	return View::make('votante.principal');
+	// });
 });
 
 

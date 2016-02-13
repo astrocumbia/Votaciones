@@ -2,6 +2,29 @@
 
 class VotanteController extends BaseController {
 
+    public function index()
+    {
+        # code...
+        $funcionario = Funcionariocasilla::select('id','nombre')
+                        ->where('Casilla_id','=',1)
+                        ->lists('nombre','id');
+        $casillas = Casilla::lists('id','id');
+
+        Session::put('mensajeoculto', "askldmalksdml");
+        return View::make('votante.principal')
+                ->with("casillas",$casillas)
+                ->with("funcionario",$funcionario);
+    }
+
+    public function pruebaajax(){
+        $idCasilla = Input::get('id');
+        $funcionario = Funcionariocasilla::select('id','nombre')
+                        ->where('Casilla_id','=',$idCasilla)
+                        ->get();
+        $render = View::make('pruebas.selectajax')->with("funcionario",$funcionario)->render();
+        return Response::json(['imprimir'=>$render]);
+    }
+
     public function postclaveelector(){
         /*Primera vista del votante*/
         /*----REQUERIMIENTOS----*/
