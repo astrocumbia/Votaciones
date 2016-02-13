@@ -1,12 +1,6 @@
 # Votaciones
 Sistema Para realizar votaciones electronicas
-Para Suhbir Cabios sigan estos sencillos paso:
-	+git status
-	+git add *
-	+git commit -m "mensaje"
-	+git pull /*para descargar si es que hay algun cambio*/
-	+git merge /*si es que hay cambios*/
-	+git push
+
 
 Mensaje:  
     Modifiqué el script de la base de datos, vuélvanlo a correr.
