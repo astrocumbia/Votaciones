@@ -40,45 +40,52 @@ class LoginController extends BaseController {
 
 	public function crearunusuario()
 	{
-		$usuario = Funcionariocasilla::find(1);
-		if ($usuario != null) {
-			echo "El usuario ya existe";
-			return;
-		}
-		DB::table('lugar')->insert(array(
-            'id'    => 1,
-            'estado'=>'administrador',
-            'municipio' => 'huajuapan',
-            'localidad' => 'acatlima',
-            // 'jornada_id'=>1,
-            // 'Casilla_id'=>1,
-            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-            'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
-        ));
-        DB::table('Jornada')->insert(array(
-            'id'    => 1,
-            // 'estado'=>'administrador',
-            // 'municipio' => 'huajuapan',
-            // 'localidad' => 'acatlima',
-            // 'jornada_id'=>1,
-            // 'Casilla_id'=>1,
-            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-            'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
-        ));
-		DB::table('Casilla')->insert(array(
-            'id'    => 1,
-            // 'estado'=>'administrador',
-            // 'municipio' => 'huajuapan',
-            'lugar_id' => 1,
-            'jornada_id'=>1,
-            // 'Casilla_id'=>1,
-            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-            'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
-        ));
+		// $usuario = Funcionariocasilla::find(1);
+		// if ($usuario != null) {
+		// 	echo "El usuario ya existe";
+		// 	return;
+		// }
+		// DB::table('lugar')->insert(array(
+  //           'id'    => 1,
+  //           'estado'=>'administrador',
+  //           'municipio' => 'huajuapan',
+  //           'localidad' => 'acatlima',
+  //           'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+  //           'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+  //       ));
+  //       DB::table('Jornada')->insert(array(
+  //           'id'    => 1,
+  //           'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+  //           'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+  //       ));
+		// DB::table('Casilla')->insert(array(
+  //           'id'    => 1,
+  //           'lugar_id' => 1,
+  //           'jornada_id'=>1,            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+  //           'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+  //       ));
 
-		DB::table('Funcionario_casilla')->insert(array(
+		// DB::table('Funcionario_casilla')->insert(array(
+  //           'id'    => 1,
+  //           'nombre'=>'administrador',
+  //           'password' => Hash::make('123456'),
+  //           // 'jornada_id'=>1,
+  //           'Casilla_id'=>1,
+  //           'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+  //           'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+  //       ));
+        DB::table('Funcionario_casilla')->insert(array(
             'id'    => 1,
-            'nombre'=>'administrador',
+            'nombre'=>'arturo',
+            'password' => Hash::make('123456'),
+            // 'jornada_id'=>1,
+            'Casilla_id'=>1,
+            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        ));
+        DB::table('Funcionario_casilla')->insert(array(
+            'id'    => 1,
+            'nombre'=>'matadamas',
             'password' => Hash::make('123456'),
             // 'jornada_id'=>1,
             'Casilla_id'=>1,
@@ -90,6 +97,14 @@ class LoginController extends BaseController {
 	}
 
 	
-
+    public function pruebasimpresion()
+    {
+        $mensaje  = "arena y galleta";
+        $funcionarios = Funcionariocasilla::select('id as IDENTIFICADOR','nombre as NOMBRE')->get();
+        // $formulario  = View::make('administrador.nuevopartido')->render();
+        return View::make('pruebas.test')
+                    ->with("perros",$mensaje)
+                    ->with("funcionarios",$funcionarios);
+    }
 
 }

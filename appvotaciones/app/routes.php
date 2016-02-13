@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('pruebas.test');
-});
+Route::get('/', array('uses'=>'LoginController@pruebasimpresion'));
 
 Route::get('login', function()
 {

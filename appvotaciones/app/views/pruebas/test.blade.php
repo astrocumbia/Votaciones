@@ -5,6 +5,25 @@
 		<h3>Cabecera</h3>
 	</div>
 		<div class="row">
+			<p>
+				{{ $perros }}
+			</p>
+		</div>
+		<div class="row">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+					  @foreach( $funcionarios[0]->getAttributes() as $etiqueta => $valor)
+				        <td>{{$etiqueta}}</td>
+				      @endforeach
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+		</div>
+		<div class="row">
 			<div class="col-md-6 bg-primary">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque praesentium exercitationem adipisci blanditiis cupiditate qui vero eligendi, repudiandae id reiciendis tempora? Excepturi molestias dicta nobis cum perferendis ad natus? Doloribus.
 			</div>
