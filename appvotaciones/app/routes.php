@@ -100,6 +100,9 @@ Route::group(array('prefix' => 'votante'), function()
 	Route::get('gracias',function(){
 		return View::make('votante.agradecimiento');
 	});
+	Route::get('prueba',function(){
+		return View::make('pruebas.pruebavotante');
+	});
 	Route::get('index', array('uses'=>'VotanteController@index'));
 	Route::post('test', array('uses'=>'VotanteController@pruebaajax'));
 
