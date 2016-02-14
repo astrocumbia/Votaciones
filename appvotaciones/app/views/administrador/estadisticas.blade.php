@@ -2,7 +2,7 @@
 @section('body')
   <div class="container">
     <div class="text-center">
-      <h3>Resultado</h3>
+      <h3>Resultados</h3>
     </div>
 
       <div class= "row">
@@ -40,7 +40,7 @@
         ]);
 
         // Set chart options
-        var options = {'title':'Resultado de Eleccinoes',
+        var options = {'title':'Resultado de Elecciones',
                        'width':800,
                        'height':700};
 
