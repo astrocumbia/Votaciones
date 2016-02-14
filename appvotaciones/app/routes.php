@@ -58,6 +58,9 @@ Route::group(array('prefix' => 'administrador'), function()
 	Route::get('verfuncionarios',function(){
 		return View::make('administrador.verfuncionarios');
 	});
+	Route::get('estadisticas',function(){
+		return View::make('administrador.estadisticas');
+	});
 });
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
