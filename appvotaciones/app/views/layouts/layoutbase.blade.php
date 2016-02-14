@@ -14,6 +14,19 @@
   {{ HTML::style('css/login.css');}}
   {{-- aqui termina estilos pacheco --}}
 	{{-- {{ HTML::script('js/jquery-2.1.3.js');}} --}}
+  <style>
+    <style>
+      .margencontendorcentral{
+        margin-top: 30%;
+      }
+      .margencontenedorprincipal{
+        margin-top: 15%;
+      }
+      .borderedondo{
+        border-radius: 10px;
+      }
+    </style>
+  </style>
 	<title>Votaciones</title>
 	@yield("css")
 	@yield("campodeprueba")

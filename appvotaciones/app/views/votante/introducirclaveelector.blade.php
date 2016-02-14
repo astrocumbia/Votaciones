@@ -5,17 +5,7 @@
 	
 </style>
 @endsection
-<style>
-	.margencontendorcentral{
-		margin-top: 30%;
-	}
-	.margencontenedorprincipal{
-		margin-top: 15%;
-	}
-	.borderedondo{
-		border-radius: 10px;
-	}
-</style>
+
 
 @section('body')
 	
@@ -31,7 +21,7 @@
 							</div>
 						</div>
 						<div class="row text-center">
-							<button type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+							<a type="button" class="btn btn-success" href="candidatos">Aceptar</a>
 						</div>
 					</div>
 					<div class="col-md-4">
