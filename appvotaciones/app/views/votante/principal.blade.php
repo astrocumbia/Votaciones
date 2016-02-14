@@ -38,7 +38,7 @@
       var id = $(obj).val();
       console.log(id);
       $.ajax({
-        url: 'casilla/test',
+        url: 'votante/test',
         type: 'POST',
         data: {id:id },
       })

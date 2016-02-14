@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', array('uses'=>'LoginController@pruebasimpresion'));
+Route::get('/', array('uses'=>'VotanteController@index'));
 
 Route::get('login', function()
 {
@@ -90,6 +90,10 @@ Route::group(array('prefix' => 'votante'), function()
 	Route::get('index',function(){
 		return View::make('votante.introducirclaveelector');
 	});
+
+	Route::get('ingresarine',function(){
+		return View::make('votante.introducirclaveelector');
+	});
 	Route::get('candidatos',function(){
 		return View::make('votante.vercandidatos');
 	});
@@ -97,7 +101,7 @@ Route::group(array('prefix' => 'votante'), function()
 		return View::make('votante.agradecimiento');
 	});
 	Route::get('index', array('uses'=>'VotanteController@index'));
-	Route::post('casilla/test', array('uses'=>'VotanteController@pruebaajax'));
+	Route::post('test', array('uses'=>'VotanteController@pruebaajax'));
 
 	// Route::get('principal',function(){
 	// 	return View::make('votante.principal');

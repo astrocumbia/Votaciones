@@ -17,4 +17,4 @@
 	</tr>
 	</tbody>
 </table>
-<button type="button" class="btn btn-default" >Iniciar sesion</button>
+<a type="button" class="btn btn-default" href="votante/ingresarine">Iniciar sesion</a>

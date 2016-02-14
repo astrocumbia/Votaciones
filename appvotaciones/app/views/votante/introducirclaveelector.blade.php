@@ -1,27 +1,42 @@
 @extends('layouts.layoutbase')
+
+@section('css')
+<style>
+	
+</style>
+@endsection
+<style>
+	.margencontendorcentral{
+		margin-top: 30%;
+	}
+	.margencontenedorprincipal{
+		margin-top: 15%;
+	}
+	.borderedondo{
+		border-radius: 10px;
+	}
+</style>
+
 @section('body')
-	<style>
-		img{
-			height:100%;
-			width:100%;
-		}
-	</style>
-	<div class="container">
-		<div class="row bg-primary">
+	
+	<div class="container margencontenedorprincipal">
+		<div class="row bg-primary borderedondo">
 			<div class="col-md-12">
 				<form action="" method="POST">
 					<div class="col-md-4 col-md-offset-2">
-						<div class="row">
-							<label for="claveelector">Introduzca su clave de elector:</label>
-							<input type="text" name"claveelector" requiered>
+						<div class="row margencontendorcentral">
+							<div class="form-group text-center">
+								<label for="claveelector">Introduzca su clave de elector:</label>
+								<input type="text" name"claveelector" required="required" class="form-control input-lg">
+							</div>
 						</div>
-						<div class="row">
+						<div class="row text-center">
 							<button type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<figure>
-							<img src={{ asset('img/credencial.png') }} >
+							<img src={{ asset('img/credencial.png') }} class="img-responsive">
 						</figure>
 					</div>
 				</form>
