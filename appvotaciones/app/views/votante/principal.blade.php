@@ -32,7 +32,7 @@
   <script>
     function showform(){
       console.log('showform');
-      $("#contenedorcasilla").show();
+      $("#contenedorcasilla").fadeIn('slow');
     }
     function peticion(obj){
       var id = $(obj).val();
