@@ -8,15 +8,13 @@
 		
 			<td>
 				{{ $persona->nombre }}
-
-			</td>
-			<td>
 				<input type="password" class="form-control">
-			</td>		
+
+			</td>	
 		@empty
 			{{ "No hay funcionarios" }}
 		@endforelse
 	</tr>
 	</tbody>
 </table>
-
+<button type="button" class="btn btn-default" >Iniciar sesion</button>
