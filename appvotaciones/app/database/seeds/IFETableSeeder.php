@@ -19,8 +19,8 @@ class CasillaTableSeeder extends Seeder {
 
         for ($i = 0; $i < 100; $i++){
         	$votante = DBIFE::create(array(
-        	'nombre'=>$faker->cad,
-        	'clave_elector'=>"asdc345rfgtyhjklo0",
+        	'nombre'=>$faker->name,
+        	'clave_elector'=>$cad,
         	'huella'=>'123456',
         	'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => \Carbon\Carbon::now()->toDateTimeString()
