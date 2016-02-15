@@ -12,6 +12,8 @@
 */
 
 Route::get('/', array('before'=>'auth','uses'=>'VotanteController@index'));
+//Obtener resultados de votos
+		Route::get('/results', array('uses'=>'AdminController@getVotos') );
 
 Route::get('login', function()
 {
@@ -23,7 +25,7 @@ Route::get('login', function()
 Route::group(array('prefix' => 'administrador'), function()
 {
 
-
+	
 
 	/*++++++++++++++++++++++++++ Vistas partido ++++++++++++++++++++++++++*/
 	Route::group(array('prefix' => 'partido'), function(){
@@ -67,7 +69,6 @@ Route::group(array('prefix' => 'administrador'), function()
 		//Editar Partido
 		Route::get('edit/{id}', array('uses'=>'AdminController@editCandidato') );
 
-
 		//Guardar candidato
 		Route::post('store', array('uses'=>'AdminController@storeCandidato') );
 
@@ -76,6 +77,7 @@ Route::group(array('prefix' => 'administrador'), function()
 
 		//Borrar partido
 		Route::post('del/{id}', array('uses'=>'AdminController@deletePartido') );
+
 		
 		Route::get('nuevocandidato',function(){
 			return View::make('administrador.nuevocandidato');

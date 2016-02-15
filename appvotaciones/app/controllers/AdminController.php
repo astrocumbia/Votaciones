@@ -146,4 +146,19 @@ class AdminController extends BaseController {
         return Redirect::to('administrador/candidato');
     }
 
+    /**
+    *   Obtener estadisticas
+    **/
+    public function getVotos()
+    {
+        $votos = Voto::all();
+        return Response::json([
+          ['PRD', 3],
+          ['PRI DARTH VADER', 1],
+          ['PN (Partido Nacional)', 4],
+          ['PAN', 1]
+        ]);
+    }
+
+    
 }
