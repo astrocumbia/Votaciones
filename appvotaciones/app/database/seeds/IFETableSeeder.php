@@ -10,10 +10,17 @@ class CasillaTableSeeder extends Seeder {
 
         $this->command->info('Iniciando inserción!');
 
-        for ($i = 0; $i < 25; $i++){
+        $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+        $cad = "";
+        for($i=0;$i<12;$i++) {
+         $cad .= substr($str,rand(0,18),1);
+         }
+
+
+        for ($i = 0; $i < 100; $i++){
         	$votante = DBIFE::create(array(
-        	'nombre'=>$faker->name,
-        	'clave_elector'=>"Aquiinventalgo",
+        	'nombre'=>$faker->cad,
+        	'clave_elector'=>"asdc345rfgtyhjklo0",
         	'huella'=>'123456',
         	'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => \Carbon\Carbon::now()->toDateTimeString()
