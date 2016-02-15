@@ -13,14 +13,9 @@ class CandidatoTableSeeder extends Seeder {
         DB::table('Partido')->delete();
         
         $logo='logo1';
-        
-        
-
-
-
         for ($i = 0; $i < 5; $i++){
         	$partido = Partido::create(array(
-        	'id'=>$i,
+        	// 'id'=>$i,
             'nombre'=>$faker->name,
             'logo'=>"logo_".$i,
         	'created_at' => \Carbon\Carbon::now()->toDateTimeString(),

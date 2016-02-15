@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
 		$this->call('IFETableSeeder');
 		// $this->call('CasillaTableSeeder');
-		// $this->call('CandidatoTableSeeder');
+		$this->call('CandidatoTableSeeder');
 		$this->command->info('Personas Insertadas!');
 		// $this->call('UserTableSeeder');
 	}

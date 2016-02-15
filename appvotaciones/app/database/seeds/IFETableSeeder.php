@@ -28,10 +28,10 @@ class IFETableSeeder extends Seeder {
 
 
 
-        for ($i = 0; $i < 100; $i++){
+        for ($i = 0; $i < 300; $i++){
         	$votante = DBIFE::create(array(
         	'nombre'=>$faker->name,
-        	'clave_elector'=>$cad .= substr($str,rand(0,18),1),
+        	'clave_elector'=>$this->getkey(),
         	// 'huella'=>'123456',
         	'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => \Carbon\Carbon::now()->toDateTimeString()

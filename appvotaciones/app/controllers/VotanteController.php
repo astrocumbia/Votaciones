@@ -50,7 +50,8 @@ class VotanteController extends BaseController {
             return Redirect::back()
                     ->with("mensaje","Lo sentimos, su voto ya fue registrado.");
         }
-        
+        //si todo
+
         return View::make('votante.vercandidatos');
     }
 
