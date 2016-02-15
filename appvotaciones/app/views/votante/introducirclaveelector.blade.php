@@ -2,7 +2,7 @@
 
 @section('css')
 <style>
-	
+
 </style>
 @endsection
 
@@ -25,7 +25,7 @@
 						<div class="row margencontendorcentral">
 							<div class="form-group text-center">
 								<label for="claveelector">Introduzca su clave de elector:</label>
-								<input type="text" name"claveelector" required="required" class="form-control input-lg">
+								<input type="text" name"claveelector" required="required" class="form-control input-lg text-center" pattern="[A-Z0-9]{18}" maxlength="18" style="text-transform:uppercase">
 							</div>
 						</div>
 						<div class="row text-center">
