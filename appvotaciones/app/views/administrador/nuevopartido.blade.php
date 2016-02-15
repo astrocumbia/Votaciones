@@ -17,6 +17,7 @@
 				    		name="InputNombrePartido"
 				    		placeholder="Nombre Partido"
 							required
+							autofocus
 				    		>
 			  	</div>
 			  	  <div class="form-group">

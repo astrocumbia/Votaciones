@@ -40,6 +40,12 @@ Route::group(array('prefix' => 'administrador'), function()
 
 		//Guardar partido
 		Route::post('store', array('uses'=>'AdminController@storePartido') );
+
+		//Guardar partido
+		Route::post('update', array('uses'=>'AdminController@updatePartido') );
+
+		//Borrar partido
+		Route::post('del/{id}', array('uses'=>'AdminController@deletePartido') );
 		
 		Route::get('nuevocandidato',function(){
 			return View::make('administrador.nuevocandidato');
