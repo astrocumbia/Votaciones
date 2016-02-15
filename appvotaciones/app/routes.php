@@ -11,42 +11,137 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('pruebas.test');
-});
+Route::get('/', array('uses'=>'VotanteController@index'));
 
 Route::get('login', function()
 {
 	return View::make('login.login');
 });
 
-Route::group(array('prefix' => 'candidato'), function()
+/*++++++++++++++++++++++++++ Vistas administrador ++++++++++++++++++++++++++*/
+/*+++++++ La ruta para ver estas vistas quedaría 'administrador/* ' donde * es la ruta pasada en el get, por ejemplo el index quedaría "administrador/index" ++++++++++++++*/
+Route::group(array('prefix' => 'administrador'), function()
 {
-	//RUTAS IRVIN
-	Route::get('add',function(){
-		return View::make('candidatos.add');
+
+	/*++++++++++++++++++++++++++ Vistas partido ++++++++++++++++++++++++++*/
+	Route::group(array('prefix' => 'partido'), function(){
+		
+		//Principal
+		Route::get('/', array('uses'=>'AdminController@showPartido') );
+		
+		//Agregar Partido
+		Route::get('new',function(){
+			return View::make('administrador.nuevopartido');
+		});
+
+		//Editar Partido
+		Route::get('edit',function(){
+			echo 'administrador/partido/edit';
+			//return View::make('administrador.nuevopartido');
+		});
+
+		//Guardar partido
+		Route::post('store', array('uses'=>'AdminController@storePartido') );
+		
+		Route::get('nuevocandidato',function(){
+			return View::make('administrador.nuevocandidato');
+		});
 	});
 
-	Route::get('show',function(){
-		return View::make('candidatos.show');
+	Route::get('index',function(){
+		return View::make('administrador.indexadminstrador');
+	});
+	Route::get('nuevajornada',function(){
+		return View::make('administrador.nuevajornada');
+	});
+	Route::get('nuevolugar',function(){
+		return View::make('administrador.nuevolugar');
+	});
+	Route::get('nuevacasilla',function(){
+		return View::make('administrador.nuevacasilla');
+	});
+	
+
+	Route::get('nuevofuncionario',function(){
+		return View::make('administrador.nuevofuncionario');
+	});
+	Route::get('verfuncionario',function(){
+		return View::make('administrador.verfuncionario');
+	});
+	Route::get('vercandidatos',function(){
+		return View::make('administrador.vercandidatos');
+	});	
+	Route::get('verpartidos',function(){
+		return View::make('administrador.verpartidos');
+	});	
+	Route::get('vercasillas',function(){
+		return View::make('administrador.vercasillas');
+	});
+	Route::get('verfuncionarios',function(){
+		return View::make('administrador.verfuncionarios');
+	});
+	Route::get('estadisticas',function(){
+		return View::make('administrador.estadisticas');
+	});
+});
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/*++++++++++++++++++++++++++ Vistas funcionariodecasilla ++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+Route::group(array('prefix' => 'funcionario'), function()
+{
+	Route::get('index',function(){
+		return View::make('funcionariodecasilla.loginfuncionariodecasilla');
 	});
 
 });
-Route::get('votante', function()
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+/*++++++++++++++++++++++++++ Vistas votante ++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+Route::group(array('prefix' => 'votante'), function()
 {
-	return View::make('loginvotante');
+	Route::get('index',function(){
+		return View::make('votante.introducirclaveelector');
+	});
+
+	Route::get('ingresarine',function(){
+		return View::make('votante.introducirclaveelector');
+	});
+	Route::get('candidatos',function(){
+		return View::make('votante.vercandidatos');
+	});
+	Route::get('gracias',function(){
+		return View::make('votante.agradecimiento');
+	});
+	Route::get('prueba',function(){
+		return View::make('pruebas.pruebavotante');
+	});
+	Route::get('index', array('uses'=>'VotanteController@index'));
+	Route::post('test', array('uses'=>'VotanteController@pruebaajax'));
+
+	// Route::get('principal',function(){
+	// 	return View::make('votante.principal');
+	// });
 });
 
-/*rutas mata */
 
 
-Route::get('funcionarios', function()
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+			/*Rutas para pruebas de logueo*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+Route::get('getlogueo', function()
 {
-	return View::make('funcionarios.create_funcionarios');
+	return View::make('pruebas.login');
 });
-
-Route::get('casilla', function()
-{
-	return View::make('casilla.create_casilla');
-});
+Route::post('postlogueo', array('uses'=>'LoginController@login'));
+Route::get('testlogout', array('uses'=>'LoginController@logout'));
+Route::get('crearunusuario', array('uses'=>'LoginController@crearunusuario'));
