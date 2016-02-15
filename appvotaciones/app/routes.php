@@ -23,6 +23,8 @@ Route::get('login', function()
 Route::group(array('prefix' => 'administrador'), function()
 {
 
+
+
 	/*++++++++++++++++++++++++++ Vistas partido ++++++++++++++++++++++++++*/
 	Route::group(array('prefix' => 'partido'), function(){
 		
@@ -45,6 +47,34 @@ Route::group(array('prefix' => 'administrador'), function()
 		Route::post('update', array('uses'=>'AdminController@updatePartido') );
 
 		//Borrar partido
+		Route::get('del/{id}', array('uses'=>'AdminController@deletePartido') );
+		
+		Route::get('nuevocandidato',function(){
+			return View::make('administrador.nuevocandidato');
+		});
+	});
+
+
+/*++++++++++++++++++++++++++ Vistas candidato ++++++++++++++++++++++++++*/
+	Route::group(array('prefix' => 'candidato'), function(){
+		
+		//Principal
+		Route::get('/', array('uses'=>'AdminController@showCandidato') );
+		
+		//Agregar Partido
+		Route::get('new', array('uses'=>'AdminController@newCandidato') );
+
+		//Editar Partido
+		Route::get('edit/{id}', array('uses'=>'AdminController@editCandidato') );
+
+
+		//Guardar candidato
+		Route::post('store', array('uses'=>'AdminController@storeCandidato') );
+
+		//Guardar partido
+		Route::post('update', array('uses'=>'AdminController@updatePartido') );
+
+		//Borrar partido
 		Route::post('del/{id}', array('uses'=>'AdminController@deletePartido') );
 		
 		Route::get('nuevocandidato',function(){
@@ -52,7 +82,8 @@ Route::group(array('prefix' => 'administrador'), function()
 		});
 	});
 
-	Route::get('index',function(){
+
+	Route::get('/',function(){
 		return View::make('administrador.indexadminstrador');
 	});
 	Route::get('nuevajornada',function(){
@@ -72,12 +103,8 @@ Route::group(array('prefix' => 'administrador'), function()
 	Route::get('verfuncionario',function(){
 		return View::make('administrador.verfuncionario');
 	});
-	Route::get('vercandidatos',function(){
-		return View::make('administrador.vercandidatos');
-	});	
-	Route::get('verpartidos',function(){
-		return View::make('administrador.verpartidos');
-	});	
+
+	
 	Route::get('vercasillas',function(){
 		return View::make('administrador.vercasillas');
 	});
@@ -123,7 +150,7 @@ Route::group(array('prefix' => 'votante'), function()
 		return View::make('votante.vercandidatos');
 	});
 	Route::get('gracias',function(){
-		return View::make('votante.agradecimiento');
+		return View::make('votante.gracias');
 	});
 	Route::get('prueba',function(){
 		return View::make('pruebas.pruebavotante');
@@ -148,6 +175,12 @@ Route::get('getlogueo', function()
 Route::post('postlogueo', array('uses'=>'LoginController@login'));
 Route::get('testlogout', array('uses'=>'LoginController@logout'));
 Route::get('crearunusuario', array('uses'=>'LoginController@crearunusuario'));
+
 Route::get('mac',function(){
 	return View::make('pruebas.obtenermac');
+
+
+
+Route::get('img/partidos/{name}',  function($name){
+	return Response::download('/img/partidos/'.$name);
 });

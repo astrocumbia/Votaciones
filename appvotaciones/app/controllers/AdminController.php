@@ -3,20 +3,6 @@
 class AdminController extends BaseController {
 
   
-    /**
-    *	Obtener candidatos de la DB y mostrarlos en la tabla
-    */
-    public function showCandidato(){
-    	
-    	$candidatos = Candidato::all()	;
-    	foreach ($candidatos as $item) {
-    		$partido = $item->partido();
-    		print_r( $partido );
-    	}
-    	/*
-    	return View::make('candidatos.index',  array('candidatos' =>  $candidatos ) ) ;
-    	*/
-    }
 
 
 /***********************************************************************
@@ -88,7 +74,7 @@ class AdminController extends BaseController {
         
         //No existe y hay que regresar a la principal
         return Redirect::to('administrador/partido');
-
+        
     }
 
     /***
@@ -116,5 +102,48 @@ class AdminController extends BaseController {
     }
 
 
+/***********************************************************************
+                    Métodos para manejo de candidatos
+***********************************************************************/    
+
+    /**
+    *   Obtener candidatos de la DB y mostrarlos en la tabla
+    */
+    public function showCandidato(){
+        $candidatos = Candidato::all()  ;
+        return View::make('administrador.vercandidatos', array('candidatos' => $candidatos)) ;
+    }
+
+    /**
+    *   Agregar candidato
+    **/
+    public function newCandidato()
+    {
+        $partidos = Partido::all();
+        return View::make('administrador.nuevocandidato', array( 'partidos' => $partidos ) ) ;
+    }
+
+    /**
+    *   Guardar nuevo candidato
+    **/
+    public function storeCandidato()
+    {
+        $candidato = new Candidato( array('Nombre' => Input::get('InputNombre'), 'Partido_id'=> Input::get('InputPartido') ) );
+        $candidato->save();
+        return Redirect::to('administrador/candidato');
+    }
+
+    /**
+    *   Guardar nuevo candidato
+    **/
+    public function editCandidato($id)
+    {
+        $candidato = Candidato::find($id);
+        $partidos = Partido::all();
+        if( $candidato ){
+            return View::make('administrador.editarcandidato', array( 'partidos' => $partidos, 'candidato' => $candidato ) ) ;                
+        }
+        return Redirect::to('administrador/candidato');
+    }
 
 }
