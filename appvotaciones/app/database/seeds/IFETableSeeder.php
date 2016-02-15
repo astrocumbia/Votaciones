@@ -6,7 +6,13 @@ class IFETableSeeder extends Seeder {
 
     public function getKey()
     {
-        
+        $len = 18;
+        $key = '';
+        whiile( $len-- )
+        {
+            $key+= chr( rand ( 65 , 90 ) );
+        }
+        return $key;
     }
 
     public function run()
