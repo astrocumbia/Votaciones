@@ -75,14 +75,13 @@ Route::group(array('prefix' => 'administrador'), function()
 		//Guardar Candidato
 		Route::post('update', array('uses'=>'AdminController@updateCandidato') );
 
-<<<<<<< HEAD
+
 		//Borrar partido
 		Route::post('del/{id}', array('uses'=>'AdminController@deletePartido') );
 
-=======
 		//Borrar Candidato
 		Route::get('del/{id}', array('uses'=>'AdminController@deleteCandidato') );
->>>>>>> 12ebe4fa071ab085679c0665bf6a5816b31fb0b5
+
 		
 	
 	});
