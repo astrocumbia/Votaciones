@@ -6,6 +6,14 @@
 			<h3>Funcionarios</h3>
 		</div>
 
+		<div class="row">
+			<div class="col-md-4">
+				<!-- Button trigger modal -->
+				<a class="btn btn-primary btn-block" href="{{url('administrador/nuevofuncionario')}}">
+				  Nuevo
+				</a>
+			</div>
+		</div>
 
 		<div class="row">
 			<table class="table table-striped">
