@@ -28,6 +28,7 @@
   </div>
 @endsection
 @section('javascript')
+  <script type="text/javascript" src="http://l2.io/ip.js?var=myip"></script>
   <script>
     function showform(){
       console.log('showform');
@@ -37,7 +38,7 @@
       var id = $(obj).val();
       console.log(id);
       $.ajax({
-        url: 'votante/test',
+        url: 'test',
         type: 'POST',
         data: {id:id },
       })
@@ -51,9 +52,20 @@
       });
         }
 
+
+  
+
+  
+
+
+
+
     $( document ).ready(function() {
+      alert(myip);
       $("#contenedorcasilla").hide();
       console.log('Cargado');
+      // console.log(mmjsCountryName);
+      // console.log(mmjsCountryCode);
     });
   </script>
 @endsection

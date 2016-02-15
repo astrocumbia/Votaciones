@@ -124,11 +124,9 @@ Route::group(array('prefix' => 'administrador'), function()
 
 Route::group(array('prefix' => 'funcionario'), function()
 {
-	Route::get('index',function(){
-		return View::make('funcionariodecasilla.loginfuncionariodecasilla');
-	});
+	Route::get('index',array('uses'=>'VotanteController@index'));
 	Route::post('login',array('uses'=>'LoginController@login'));
-
+	Route::post('test', array('uses'=>'VotanteController@pruebaajax'));
 });
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -152,13 +150,13 @@ Route::group(array('prefix' => 'votante'), function()
 		return View::make('votante.vercandidatos');
 	});
 	Route::get('gracias',function(){
-		return View::make('votante.agradecimiento');
+		return View::make('votante.gracias');
 	});
 	Route::get('prueba',function(){
 		return View::make('pruebas.pruebavotante');
 	});
 	Route::get('index', array('uses'=>'VotanteController@index'));
-	Route::post('test', array('uses'=>'VotanteController@pruebaajax'));
+	
 
 	// Route::get('principal',function(){
 	// 	return View::make('votante.principal');
