@@ -45,6 +45,7 @@
       console.log('showform');
       $("#contenedorcasilla").fadeIn('slow');
     }
+    
     function peticion(obj){
       var id = $(obj).val();
       console.log(id);

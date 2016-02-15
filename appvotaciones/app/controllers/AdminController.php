@@ -163,8 +163,22 @@ class AdminController extends BaseController {
     }
 
     /**
-    *   Eliminar Candidato
-    */
+<<<<<<< HEAD
+    *   Obtener estadisticas
+    **/
+    public function getVotos()
+    {
+        $votos = Voto::all();
+        return Response::json([
+          ['PRD', 3],
+          ['PRI DARTH VADER', 1],
+          ['PN (Partido Nacional)', 4],
+          ['PAN', 1]
+        ]);
+    }
+
+    
+
     public function deleteCandidato( $id )
     {
         $candidato = Candidato::find( $id );

@@ -10,98 +10,63 @@
 
 	<div class="container margencontenedorprincipal ">
 		{{ Form::open(array('url'=>'votante/posteleccioncandidatos')) }}
-
-			<div class="col-sm-6 col-md-4 text-center">
+			<div class="row">
+						@if(Session::has('mensaje'))
+				        <div class="alert alert-danger alert-dismissible" role="alert">
+				          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				          <strong>Informacíon!</strong> {{ Session::get('mensaje') }}.
+				        </div>
+				      @endif
+			</div>
+			<div class="row">
+			<div class="col-sm-6 col-md-3 text-center">
 			    <div class="thumbnail">
 			     <img src={{ asset('img/candidato1.png') }} class="img-responsive img-rounded" >
 			      <div class="caption">
-			        <h3>Partido nombre</h3>
+			        <h3></h3>
 			        <!-- <p>texto</p> -->
-			        <p><a href="#" class="btn btn-primary" role="button">Elegir</a></p>
+			        <input required="required" class="" type="radio" name="candidato" value="{{  $candidatos[0]->id}}"> {{ $candidatos[0]->Nombre }}<br>
 			      </div>
 			    </div>
 			  </div>
-			  <div class="col-sm-6 col-md-4 text-center">
+			  <div class="col-sm-6 col-md-3 text-center">
 			    <div class="thumbnail">
 			     <img src={{ asset('img/candidato2.png') }} class="img-responsive img-rounded" >
 			      <div class="caption">
-			        <h3>Partido nombre</h3>
+			        <h3></h3>
 			        <!-- <p>texto</p> -->
-			        <p><a href="#" class="btn btn-primary" role="button">Elegir</a></p>
+			        <input required="required" class="" type="radio" name="candidato" value="{{ $candidatos[1]->id }}"> {{ $candidatos[1]->Nombre }}<br>
 			      </div>
 			    </div>
 			  </div>
-			  <div class="col-sm-6 col-md-4 text-center">
+			  <div class="col-sm-6 col-md-3 text-center">
 			    <div class="thumbnail">
 			     <img src={{ asset('img/candidato3.png') }} class="img-responsive img-rounded" >
 			      <div class="caption">
-			        <h3>Partido nombre</h3>
+			        <h3></h3>
 			        <!-- <p>texto</p> -->
-			        <p><a href="#" class="btn btn-primary" role="button">Elegir</a></p>
+			       <input required="required" class="" type="radio" name="candidato" value="{{ $candidatos[2]->id }}"> {{ $candidatos[2]->Nombre }}<br>
 			      </div>
 			    </div>
 			  </div>
-			<!-- <div class="row bg-primary borderedondo">
-			<table>
-				<tr>
-				  	<td>
-					  	<div class="col-md-8">
-							<img src={{ asset('img/candidato1.png') }} class="img-responsive img-rounded" >
-						</div>
-						<div id="nosel1" class="col-md-2">
-							<img  onclick="selecciona('7')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
-						</div>
-						<div  id="sel1" class="col-md-2 ">
-							<img   src={{ asset('img/seleccionado.png') }} class="img-responsive" >
-						</div>
-					</td>
-				  	<td>
-					  	<div class="col-md-8">
-							<img src={{ asset('img/candidato2.png') }} class="img-responsive img-rounded" >
-						</div>
-						<div id="nosel2" class="col-md-2">
-							<img  onclick="selecciona('8')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
-						</div>
-						<div  id="sel2" class="col-md-2 ">
-							<img   src={{ asset('img/seleccionado.png') }} class="img-responsive" >
-						</div>
-					</td>
-				</tr>
-				 
-				<tr>
-					 <td>
-					  	<div class="col-md-8">
-							<img src={{ asset('img/candidato3.png') }} class="img-responsive img-rounded" >
-						</div>
-						<div id="nosel3" class="col-md-2">
-						<img  onclick="selecciona('9')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
-					</div>
-						<div  id="sel3" class="col-md-2 ">
-							<img   src={{ asset('img/seleccionado.png') }} class="img-responsive" >
-						</div>
-					</td>
-				  	<td>
-					  	<div class="col-md-8">
-							<img src={{ asset('img/candidato1.png') }} class="img-responsive img-rounded" >
-						</div>
-						<div id="nosel4" class="col-md-2">
-							<img  onclick="selecciona('10')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
-						</div>
-						<div  id="sel4" class="col-md-2 ">
-							<img   src={{ asset('img/seleccionado.png') }} class="img-responsive" >
-						</div>
-					</td>
-				</tr>
-			</table>
-			<div class="col-md-4 col-md-offset-4" >
-	      		<button class="btn btn-block btn-danger" type="submit">Enviar voto</button>
+			  <div class="col-sm-6 col-md-3 text-center">
+			    <div class="thumbnail">
+			     <img src={{ asset('img/candidato0.png') }} class="img-responsive img-rounded" >
+			      <div class="caption">
+			        <h3>Anular voto</h3>
+			        <!-- <p>texto</p> -->
+			        <input required="required" class="" type="radio" name="candidato" value="0"> {{ $candidatos[2]->Nombre }}<br>
+			    </div>
+			  </div>
 			</div>
-		</div> -->
+			<div class="row text-center">
+				<button class="btn btn-primary btn-lg" type="submit">Enviar voto</button>
+			</div>
 		{{ Form::close() }}
 	</div>
 	
 	
-@stop
+@endsection
 
 @section('javascript')	
 	<script>
@@ -134,4 +99,4 @@
 		}
 
 	</script>
-@stop
+@endsection
