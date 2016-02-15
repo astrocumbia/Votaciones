@@ -34,6 +34,10 @@
 
         // Create the data table.
         var data = new google.visualization.DataTable();
+        var jsonData = $.ajax({
+          url: "/results",
+          type:"get"
+        });
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
         data.addRows([
@@ -44,6 +48,8 @@
           ['PN (Partido Nacional)', 4],
           ['PAN', 1]
         ]);
+
+
 
         // Set chart options
         var options = {'title':'Resultado de Elecciones',

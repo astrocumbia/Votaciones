@@ -12,6 +12,8 @@
 */
 
 Route::get('/', array('before'=>'auth','uses'=>'VotanteController@index'));
+//Obtener resultados de votos
+		Route::get('/results', array('uses'=>'AdminController@getVotos') );
 
 Route::get('login', function()
 {
@@ -22,9 +24,6 @@ Route::get('login', function()
 /*+++++++ La ruta para ver estas vistas quedaría 'administrador/* ' donde * es la ruta pasada en el get, por ejemplo el index quedaría "administrador/index" ++++++++++++++*/
 Route::group(array('prefix' => 'administrador'), function()
 {
-
-
-
 	/*++++++++++++++++++++++++++ Vistas partido ++++++++++++++++++++++++++*/
 	Route::group(array('prefix' => 'partido'), function(){
 		
@@ -67,15 +66,19 @@ Route::group(array('prefix' => 'administrador'), function()
 		//Editar Candidato
 		Route::get('edit/{id}', array('uses'=>'AdminController@editCandidato') );
 
-
 		//Guardar candidato
 		Route::post('store', array('uses'=>'AdminController@storeCandidato') );
 
 		//Guardar Candidato
 		Route::post('update', array('uses'=>'AdminController@updateCandidato') );
 
+
+		//Borrar partido
+		Route::post('del/{id}', array('uses'=>'AdminController@deletePartido') );
+
 		//Borrar Candidato
 		Route::get('del/{id}', array('uses'=>'AdminController@deleteCandidato') );
+
 		
 	
 	});
@@ -136,15 +139,15 @@ Route::group(array('prefix' => 'funcionario'), function()
 /*++++++++++++++++++++++++++ Vistas votante ++++++++++++++++++++++++++*/
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-Route::group(array('prefix' => 'votante'), function()
+Route::group(array('before'=>'auth','prefix' => 'votante'), function()
 {
 	Route::get('index',function(){
 		return View::make('votante.introducirclaveelector');
 	});
 
-	Route::get('ingresarine',function(){
+	Route::get('ingresarine',array(function(){
 		return View::make('votante.introducirclaveelector');
-	});
+	}));
 	Route::get('candidatos',function(){
 		return View::make('votante.vercandidatos');
 	});
@@ -154,12 +157,15 @@ Route::group(array('prefix' => 'votante'), function()
 	Route::get('prueba',function(){
 		return View::make('pruebas.pruebavotante');
 	});
+
+	Route::post('test', array('uses'=>'VotanteController@pruebaajax'));
+
 	Route::get('index', array('uses'=>'VotanteController@index'));
+
 	Route::post('postclaveelector', array('uses'=>'VotanteController@postclaveelector'));
 
-	// Route::get('principal',function(){
-	// 	return View::make('votante.principal');
-	// });
+	Route::post('posteleccioncandidatos', array('uses'=>'VotanteController@posteleccioncandidatos'));
+
 });
 
 
@@ -172,7 +178,9 @@ Route::get('getlogueo', function()
 	return View::make('pruebas.login');
 });
 Route::post('postlogueo', array('uses'=>'LoginController@login'));
-Route::get('testlogout', array('uses'=>'LoginController@logout'));
+
+Route::get('logout', array('uses'=>'LoginController@logout'));
+
 Route::get('crearunusuario', array('uses'=>'LoginController@crearunusuario'));
 
 Route::get('mac',function(){
