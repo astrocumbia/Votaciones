@@ -17,9 +17,11 @@ class LoginController extends BaseController {
 		$log = Auth::attempt(     array('nombre' => $user,'password'=>$password  ) );
 		// var_dump($log);
 		if ($log) {
-			return View::make('pruebas.sesioniniciada');
+			//return View::make('pruebas.sesioniniciada');
+            echo "Yes";
 		}else{
-			return View::make('pruebas.mensaje')->with('error_login',Input::get('nombre'))->with('log_error',"¡usuario o contraseña invalidos!");
+			//return View::make('pruebas.mensaje')->with('error_login',Input::get('nombre'))->with('log_error',"¡usuario o contraseña invalidos!");
+            echo "NOP";
 		}
 	}
 	public function logout(){
@@ -45,7 +47,8 @@ class LoginController extends BaseController {
 			echo "El usuario ya existe";
 			return;
 		}
-		DB::table('lugar')->insert(array(
+
+        DB::table('lugar')->insert(array(
             'id'    => 1,
             'estado'=>'administrador',
             'municipio' => 'huajuapan',

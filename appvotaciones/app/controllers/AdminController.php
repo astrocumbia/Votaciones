@@ -18,6 +18,37 @@ class AdminController extends BaseController {
     	*/
     }
 
+
+    /***
+    *   Almacenar en la DB un candidato y su respectivo partido
+    */
+    public function storePartido()
+    {
+        $name = 'default.jpg';
+        if( Input::hasFile('InputLogoPartido') )
+        {
+            $originalname = md5(Input::file('InputLogoPartido')->getClientOriginalName());
+            $ext  = Input::file('InputLogoPartido')->getClientOriginalExtension();
+            $name = $originalname.'.'.$ext;
+            Input::file('InputLogoPartido')->move('public/img/partidos', $name );
+        }
+
+        $partido = new Partido( array('nombre' => Input::get('InputNombrePartido') , 'logo' => $name ) );
+        $partido->save();
+
+        return Redirect::to('administrador/partido');
+    }
+
+
+    /**
+    *   Mostrar todos los partidos
+    */    
+    public function showPartido()
+    {
+        $partidos = Partido::all();
+        return View::make( 'administrador.verpartidos', array('partidos' => $partidos) );
+    }
+
     /**
     *	Almacenar en la DB un candidato y su respectivo partido
     */
