@@ -16,6 +16,7 @@ class VotanteController extends BaseController {
                 ->with("funcionario",$funcionario);
     }
 
+    
     public function pruebaajax(){
         $idCasilla = Input::get('id');
         $funcionario = Funcionariocasilla::select('id','nombre')
