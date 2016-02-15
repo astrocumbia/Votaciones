@@ -178,7 +178,7 @@ Route::get('crearunusuario', array('uses'=>'LoginController@crearunusuario'));
 
 Route::get('mac',function(){
 	return View::make('pruebas.obtenermac');
-
+});
 
 
 Route::get('img/partidos/{name}',  function($name){
