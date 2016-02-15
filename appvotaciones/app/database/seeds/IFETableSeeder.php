@@ -10,7 +10,7 @@ class IFETableSeeder extends Seeder {
         $key = '';
         while( $len-- )
         {
-            $key+= chr( rand ( 65 , 90 ) );
+            $key = $key.chr( rand ( 65 , 90 ) );
         }
         return $key;
     }
