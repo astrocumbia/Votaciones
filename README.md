@@ -122,8 +122,12 @@ Todo su HTML debe estar dentro de @section('body') y @endsection
 
 
 ----- IRVIN 14 febrero ----
-Agregada la ruta /administrador/partido/new
-		 /administrador/partido/
+Agregada la ruta /administrador/partido/
+		 /administrador/candidato/
 
-Estoy agregando partidos y candidatos 
+puse la vista del administrador
+		/administrador
+
+solo me falta editar y eliminar  candidatos
+
 

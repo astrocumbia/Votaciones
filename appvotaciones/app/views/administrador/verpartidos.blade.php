@@ -38,9 +38,9 @@
 			  			<a class="btn btn-warning" href="{{url('administrador/partido/edit')}}/{{$partido->id}}">
 			  				<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 			  			</a>
-			  			<button type="button" class="btn btn-danger">
+			  			<a class="btn btn-danger" href="{{url('administrador/partido/del')}}/{{$partido->id}}">
 			  				<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-			  			</button>
+			  			</a>
 			  		</td>
 			  	</tr>
 			  	@endforeach
