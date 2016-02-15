@@ -27,7 +27,7 @@ class VotosTableSeeder extends Seeder {
                         'time' => \Carbon\Carbon::now()->toDateTimeString(),
                         'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
                         'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
-                        'Candidato_id' => $candidatos->id,
+                        'Candidato_id' => $candidato->id,
                         'Casilla_id' => $casilla->id
                         );
                     $voto = Voto::create( $data );
