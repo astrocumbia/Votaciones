@@ -1,5 +1,9 @@
 @extends('layouts.layoutbase')
 @section('body')
+
+  <?php 
+    print_r( $votos );
+  ?>
   <div class="container">
     <div class="text-center">
       <h3>Resultados</h3>
@@ -33,6 +37,8 @@
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
         data.addRows([
+          
+          
           ['PRD', 3],
           ['PRI DARTH VADER', 1],
           ['PN (Partido Nacional)', 4],
