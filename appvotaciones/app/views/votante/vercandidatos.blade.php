@@ -10,6 +10,53 @@
 
 	<div class="container margencontenedorprincipal">
 		<div class="row bg-primary">
+
+			<table>
+				<tr>
+				  	<td>
+					  	<div class="col-md-8">
+							<img src={{ asset('img/candidato1.png') }} class="img-responsive img-rounded" >
+						</div>
+						<div id="nosel1" class="col-md-2">
+						<img  onclick="selecciona('1')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
+					</div>
+					</td>
+				  	<td>
+					  	<div class="col-md-8">
+							<img src={{ asset('img/candidato1.png') }} class="img-responsive img-rounded" >
+						</div>
+						<div id="nosel1" class="col-md-2">
+						<img  onclick="selecciona('1')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
+					</div>
+					</td>
+				</tr>
+				 
+				<tr>
+					 <td>
+					  	<div class="col-md-8">
+							<img src={{ asset('img/candidato1.png') }} class="img-responsive img-rounded" >
+						</div>
+						<div id="nosel1" class="col-md-2">
+						<img  onclick="selecciona('1')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
+					</div>
+					</td>
+				  	<td>
+					  	<div class="col-md-8">
+							<img src={{ asset('img/candidato1.png') }} class="img-responsive img-rounded" >
+						</div>
+						<div id="nosel1" class="col-md-2">
+						<img  onclick="selecciona('1')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
+					</div>
+					</td>
+				</tr>
+			</table>
+			<div class="col-md-12" >
+	      		<button class="btn btn-block btn-default">Finalizar</button>
+			</div>
+		</div>
+	</div>
+		<!--
+		<div class="row bg-primary">
 			<div class="row">
 		        <div class="col-md-4">
 					<img src={{ asset('img/candidato1.png') }} class="img-responsive img-rounded" >
@@ -71,7 +118,8 @@
       			</div>
       		</div>
 		</div>
-	</div>
+		-->
+	
 @stop
 
 @section('javascript')	
