@@ -10,9 +10,9 @@
 		<div class="row">
 			<div class="col-md-4">
 				<!-- Button trigger modal -->
-				<button type="button" class="btn btn-primary btn-block" >
+				<a class="btn btn-primary btn-block" href="{{url('administrador/partido/new')}}">
 				  Nuevo
-				</button>
+				</a>
 			</div>
 		</div>
 
@@ -27,60 +27,26 @@
 			  </thead>
 			
 			  <tbody>
-			  	<tr>
-			  		<td>1</td>
-			  		<td>Partido Social Democrata</td>
-			  		<td>none</td>
+			  	@foreach( $partidos as $partido )
+				<tr>
+			  		<td>{{$partido->id}}</td>
+			  		<td>{{$partido->nombre}}</td>
 			  		<td>
-			  			<button type="button" class="btn btn-warning">
+			  			<img src="{{url('')}}/img/partidos/{{$partido->logo}}" alt="..." class="img-rounded" height="50" width="50">
+			  		</td>
+			  		<td>
+			  			<a class="btn btn-warning" href="{{url('administrador/partido/edit')}}/{{$partido->id}}">
 			  				<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-			  			</button>
+			  			</a>
 			  			<button type="button" class="btn btn-danger">
 			  				<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 			  			</button>
 			  		</td>
 			  	</tr>
-			  	<tr>
-			  		<td>2</td>
-			  		<td>Partido de la Revolucion Democrata</td>
-			  		<td>none</td>
-			  		<td>
-			  			<button type="button" class="btn btn-warning">
-			  				<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-			  			</button>
-			  			<button type="button" class="btn btn-danger">
-			  				<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-			  			</button>
-			  		</td>
-			  	</tr>
-			  	<tr>
-			  		<td>3</td>
-			  		<td>Partido Revolucionario Institucional</td>
-			  		<td>none</td>
-			  		<td>
-			  			<button type="button" class="btn btn-warning">
-			  				<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-			  			</button>
-			  			<button type="button" class="btn btn-danger">
-			  				<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-			  			</button>
-			  		</td>
-			  	</tr>
-			  	<tr>
-			  		<td>4</td>
-			  		<td>Partido Accion Nacional</td>
-			  		<td>none</td>
-			  		<td>
-			  			<button type="button" class="btn btn-warning">
-			  				<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-			  			</button>
-			  			<button type="button" class="btn btn-danger">
-			  				<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-			  			</button>
-			  		</td>
-			  	</tr>
+			  	@endforeach
 			  </tbody>
 			</table>
 		</div>
 	</div>
 
+<

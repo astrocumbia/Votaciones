@@ -22,6 +22,30 @@ Route::get('login', function()
 /*+++++++ La ruta para ver estas vistas quedaría 'administrador/* ' donde * es la ruta pasada en el get, por ejemplo el index quedaría "administrador/index" ++++++++++++++*/
 Route::group(array('prefix' => 'administrador'), function()
 {
+
+	/*++++++++++++++++++++++++++ Vistas partido ++++++++++++++++++++++++++*/
+	Route::group(array('prefix' => 'partido'), function(){
+		
+		//Principal
+		Route::get('/', array('uses'=>'AdminController@showPartido') );
+		
+		//Agregar Partido
+		Route::get('new',function(){
+			return View::make('administrador.nuevopartido');
+		});
+
+		//Editar Partido
+		Route::get('edit/{id}', array('uses'=>'AdminController@editPartido') );
+
+
+		//Guardar partido
+		Route::post('store', array('uses'=>'AdminController@storePartido') );
+		
+		Route::get('nuevocandidato',function(){
+			return View::make('administrador.nuevocandidato');
+		});
+	});
+
 	Route::get('index',function(){
 		return View::make('administrador.indexadminstrador');
 	});
@@ -34,12 +58,8 @@ Route::group(array('prefix' => 'administrador'), function()
 	Route::get('nuevacasilla',function(){
 		return View::make('administrador.nuevacasilla');
 	});
-	Route::get('nuevopartido',function(){
-		return View::make('administrador.nuevopartido');
-	});
-	Route::get('nuevocandidato',function(){
-		return View::make('administrador.nuevocandidato');
-	});
+	
+
 	Route::get('nuevofuncionario',function(){
 		return View::make('administrador.nuevofuncionario');
 	});

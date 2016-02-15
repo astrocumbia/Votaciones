@@ -2,7 +2,7 @@
 @section('body')
 	<div class="container">
 		<div class="text-center">
-			<h3>Agregar Partido</h3>
+			<h3>Editar Partido</h3>
 		</div>
 
 		<div class="row">
