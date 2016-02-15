@@ -9,9 +9,9 @@
 	
 
 	<div class="container margencontenedorprincipal ">
-		<form action="">
+		{{ Form::open(array('url'=>'votante/posteleccioncandidatos')) }}
 			<div class="row bg-primary borderedondo">
-
+			{{ Form::hidden('candidatoid', null, array('id'=>'candidatoid')) }}
 			<table>
 				<tr>
 				  	<td>
@@ -64,10 +64,10 @@
 				</tr>
 			</table>
 			<div class="col-md-12" >
-	      		<button class="btn btn-block btn-default">Finalizar</button>
+	      		<button class="btn btn-block btn-default" type="submit">Finalizar</button>
 			</div>
 		</div>
-		</form>
+		{{ Form::close() }}
 	</div>
 		<!--
 		<div class="row bg-primary">
