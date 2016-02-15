@@ -195,20 +195,54 @@ LOCK TABLES `Partido` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `DBIFE`
+--
+
+DROP TABLE IF EXISTS `DBIFE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE IF NOT EXISTS `DBIFE` (
+  `clave_elector` VARCHAR(255) NOT NULL,
+  `cod_barras` VARCHAR(200) NULL,
+  `nombre` VARCHAR(45) NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`clave_elector`))
+ENGINE = InnoDB DEFAULT CHARSET=utf8;;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Votado`
+--
+
+-- LOCK TABLES `BDIFE` WRITE;
+/*!40000 ALTER TABLE `Votado` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Votado` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `Votado`
 --
 
 DROP TABLE IF EXISTS `Votado`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Votado` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `clave_elector` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `Votado` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `clave_elector` VARCHAR(255) NOT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  `remember_token` VARCHAR(100) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_Votado_DBIFE1_idx` (`clave_elector` ASC),
+  CONSTRAINT `fk_Votado_DBIFE1`
+    FOREIGN KEY (`clave_elector`)
+    REFERENCES `DBSistema`.`DBIFE` (`clave_elector`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

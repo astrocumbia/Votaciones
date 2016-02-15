@@ -11,11 +11,11 @@ class LoginController extends BaseController {
         $funcionario1 = Input::get('funcionario1');
         $funcionario2 = Input::get('funcionario2');
         $funcionario3 = Input::get('funcionario3');
-
+        $MAC = Input::get('mac');
         $pw = $funcionario1.$funcionario2.$funcionario3;
-        $MAC = "ea616bdc-80d5-36ff-9495-f7cb678d632d";
+        $MAC = "80:56:F2:47:7A:E3";
 		// $user = Input::get('nombre');
-  //       $password = Input::get('password');
+  //$password = Input::get('password');
 
 		$log = Auth::attempt(array('MAC' => $MAC,'password'=>$pw  ) );
 		if ($log) {
@@ -56,67 +56,80 @@ class LoginController extends BaseController {
     // }
     public function crearunusuario()
     {
-        $usuario = Funcionariocasilla::find(1);
-        if ($usuario != null) {
-            echo "El usuario ya existe";
-            return;
-        }
-        DB::table('lugar')->insert(array(
-            'id'    => 1,
-            'estado'=>'administrador',
-            'municipio' => 'huajuapan',
-            'localidad' => 'acatlima',
+        DB::table('DBIFE')->insert(array(
+            'clave_elector'=>"HRPEKR96100120M300",
+            'cod_barras'=>"123456",
+            'nombre'=>"KAREN HERNANDEZ",
             'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+
         ));
-        DB::table('Jornada')->insert(array(
-            'id'    => 1,
+        DB::table('DBIFE')->insert(array(
+            'clave_elector'=>"ALMRAL96051720M900",
+            'cod_barras'=>"123456",
+            'nombre'=>"ALEJANDRA MARTINEZ",
             'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+
         ));
-        DB::table('Casilla')->insert(array(
-            'id'    => 1,
-            'lugar_id' => 1,
-            'jornada_id'=>1,            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-            'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
-         ));
-            DB::table('Funcionario_casilla')->insert(array(
-            'id'    => 1,
-            'nombre'=>'galleta',
-            'password' => Hash::make('123456'),
-            // 'jornada_id'=>1,
-            'Casilla_id'=>1,
-            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-            'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
-        ));
-        DB::table('Funcionario_casilla')->insert(array(
-            'id'    => 2,
-            'nombre'=>'hunter',
-            'password' => Hash::make('123456'),
-            // 'jornada_id'=>1,
-            'Casilla_id'=>1,
-            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-            'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
-        ));
-        DB::table('Funcionario_casilla')->insert(array(
-            'id'    => 3,
-            'nombre'=>'emiliano',
-            'password' => Hash::make('123456'),
-            // 'jornada_id'=>1,
-            'Casilla_id'=>1,
-            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-            'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
-        ));
-        DB::table('Funcionario_casilla')->insert(array(
-            'id'    => 4,
-            'nombre'=>'arena',
-            'password' => Hash::make('123456'),
-            // 'jornada_id'=>1,
-            'Casilla_id'=>1,
-            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-            'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
-        ));
-        $mensaje =  "Usuario creado";
+        // $usuario = Funcionariocasilla::find(1);
+        // if ($usuario != null) {
+        //     echo "El usuario ya existe";
+        //     return;
+        // }
+        // DB::table('lugar')->insert(array(
+        //     'id'    => 1,
+        //     'estado'=>'administrador',
+        //     'municipio' => 'huajuapan',
+        //     'localidad' => 'acatlima',
+        //     'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        //     'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        // ));
+        // DB::table('Jornada')->insert(array(
+        //     'id'    => 1,
+        //     'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        //     'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        // ));
+        // DB::table('Casilla')->insert(array(
+        //     'id'    => 1,
+        //     'lugar_id' => 1,
+        //     'jornada_id'=>1,            'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        //     'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        //  ));
+        //     DB::table('Funcionario_casilla')->insert(array(
+        //     'id'    => 1,
+        //     'nombre'=>'galleta',
+        //     'password' => Hash::make('123456'),
+        //     'Casilla_id'=>1,
+        //     'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        //     'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        // ));
+        // DB::table('Funcionario_casilla')->insert(array(
+        //     'id'    => 2,
+        //     'nombre'=>'hunter',
+        //     'password' => Hash::make('123456'),
+        //     'Casilla_id'=>1,
+        //     'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        //     'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        // ));
+        // DB::table('Funcionario_casilla')->insert(array(
+        //     'id'    => 3,
+        //     'nombre'=>'emiliano',
+        //     'password' => Hash::make('123456'),
+        //     // 'jornada_id'=>1,
+        //     'Casilla_id'=>1,
+        //     'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        //     'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        // ));
+        // DB::table('Funcionario_casilla')->insert(array(
+        //     'id'    => 4,
+        //     'nombre'=>'arena',
+        //     'password' => Hash::make('123456'),
+        //     'Casilla_id'=>1,
+        //     'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        //     'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        // ));
+        // $mensaje =  "Usuario creado";
         return View::make('pruebas.mensaje')->with('mensaje',$mensaje);
     }
     

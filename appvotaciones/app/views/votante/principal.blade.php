@@ -27,6 +27,9 @@
           <div class="form-group">
            {{ Form::select("casillas", $casillas, null,array('class'=>'form-control','required'=>'required','id'=>'casilla','onchange'=>'peticion(this);')) }}
           </div>
+          <div class="form-group">
+            {{ Form::hidden('mac',null,array('id'=>'mac')) }}
+          </div>
           <div class="form-group" id="funcionariosdecasilla">
             
           </div>
@@ -56,22 +59,32 @@
         var x = document.getElementById("funcionariosdecasilla");
         $(x).html(imprimir);
         // document.getElementById("id");
-        console.log(x);
+        // console.log(x);
       });
         }
 
+      function getmac() {
+        var locator = new ActiveXObject("WbemScripting.SWbemLocator");
+        var service = locator.ConnectServer(".");
+        var properties = service.ExecQuery("SELECT * FROM Win32_NetworkAdapterConfiguration");
+        var e = new Enumerator (properties);
+        for (i=0;!e.atEnd();e.moveNext (),i++)
+        {
+          if (i==2) {
+            var p = e.item ();
+            var x = p.MACAddress; 
+            return x;
+          }
+        }
+      }
 
-  
-
-  
-
-
-
-
-    $( document ).ready(function() {
+  $( document ).ready(function() {
       // alert(myip);
       $("#contenedorcasilla").hide();
-      console.log('Cargado');
+      $("#mac").val(getmac())
+      // console.log('Cargado');
+      // console.log(getmac());
+      // alert(getmac());
       // console.log(mmjsCountryName);
       // console.log(mmjsCountryCode);
     });
