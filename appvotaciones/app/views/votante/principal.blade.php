@@ -37,7 +37,7 @@
       var id = $(obj).val();
       console.log(id);
       $.ajax({
-        url: 'votante/test',
+        url: 'test',
         type: 'POST',
         data: {id:id },
       })
