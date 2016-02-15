@@ -11,16 +11,20 @@ class LoginController extends BaseController {
 	
 
 	public function login(){
-		$user = Input::get('nombre');
-        $password = Input::get('password');
 
-		$log = Auth::attempt(     array('nombre' => $user,'password'=>$password  ) );
-		// var_dump($log);
-		if ($log) {
-			return View::make('pruebas.sesioniniciada');
-		}else{
-			return View::make('pruebas.mensaje')->with('error_login',Input::get('nombre'))->with('log_error',"¡usuario o contraseña invalidos!");
-		}
+        $funcionario1 = Input::get('funcionario1');
+        $funcionario2 = Input::get('funcionario2');
+        $funcionario3 = Input::get('funcionario3');
+
+		// $user = Input::get('nombre');
+  //       $password = Input::get('password');
+
+		// $log = Auth::attempt(     array('nombre' => $user,'password'=>$password  ) );
+		// if ($log) {
+		// 	return View::make('pruebas.sesioniniciada');
+		// }else{
+		// 	return View::make('pruebas.mensaje')->with('error_login',Input::get('nombre'))->with('log_error',"¡usuario o contraseña invalidos!");
+		// }
 	}
 	public function logout(){
 		Auth::logout();
