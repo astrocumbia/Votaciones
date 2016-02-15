@@ -123,7 +123,7 @@ Route::group(array('prefix' => 'votante'), function()
 		return View::make('votante.vercandidatos');
 	});
 	Route::get('gracias',function(){
-		return View::make('votante.agradecimiento');
+		return View::make('votante.gracias');
 	});
 	Route::get('prueba',function(){
 		return View::make('pruebas.pruebavotante');
