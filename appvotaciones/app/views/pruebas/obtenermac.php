@@ -11,6 +11,7 @@ function Button1_onclick() {
   var service = locator.ConnectServer(".");
   var properties = service.ExecQuery("SELECT * FROM Win32_NetworkAdapterConfiguration");
   var e = new Enumerator (properties);
+  console.log(e);
   document.write("<table border=1>");
   dispHeading();
   for (;!e.atEnd();e.moveNext ())
