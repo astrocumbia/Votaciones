@@ -74,6 +74,7 @@ Route::group(array('prefix' => 'funcionario'), function()
 	Route::get('index',function(){
 		return View::make('funcionariodecasilla.loginfuncionariodecasilla');
 	});
+	Route::post('login',array('uses'=>'LoginController@login'));
 
 });
 
