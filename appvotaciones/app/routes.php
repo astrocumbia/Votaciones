@@ -148,3 +148,6 @@ Route::get('getlogueo', function()
 Route::post('postlogueo', array('uses'=>'LoginController@login'));
 Route::get('testlogout', array('uses'=>'LoginController@logout'));
 Route::get('crearunusuario', array('uses'=>'LoginController@crearunusuario'));
+Route::get('mac',function(){
+	return View::make('pruebas.obtenermac');
+});

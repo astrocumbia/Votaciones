@@ -21,10 +21,8 @@ class LoginController extends BaseController {
 		if ($log) {
 			return Redirect::to('votante/ingresarine');
 		}else{
-			return View::make('pruebas.mensaje')
-                    ->with('inputs',Input::all())
-                    ->with('error_login',"Fallo")
-                    ->with('log_error',"¡usuario o contraseña invalidos!");
+			return Redirect::back()
+                    ->with('mensaje',"¡usuario o contraseña invalidos!");
 		}
 	}
 
