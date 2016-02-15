@@ -14,7 +14,7 @@
     </div>
     <div class="row">
       <div class="col-md-6 col-md-offset-3 bg-info text-center" id="contenedorcasilla">
-        <form action="" method="POST" accept-charset="utf-8">
+        {{ Form::open(array('url'=>'funcionario/login')) }}
           <legend>Elige tu casilla: </legend>
           <div class="form-group">
            {{ Form::select("casillas", $casillas, null,array('class'=>'form-control','required'=>'required','id'=>'casilla','onchange'=>'peticion(this);')) }}
@@ -22,8 +22,7 @@
           <div class="form-group" id="funcionariosdecasilla">
             
           </div>
-          
-        </form>
+          {{ Form::close() }}
       </div>
     </div>
   </div>

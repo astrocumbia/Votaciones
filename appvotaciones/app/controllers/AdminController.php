@@ -18,6 +18,10 @@ class AdminController extends BaseController {
     	*/
     }
 
+/***********************************************************************
+                    Métodos para manejo de partidos
+***********************************************************************/
+
 
     /***
     *   Almacenar en la DB un candidato y su respectivo partido
@@ -48,6 +52,27 @@ class AdminController extends BaseController {
         $partidos = Partido::all();
         return View::make( 'administrador.verpartidos', array('partidos' => $partidos) );
     }
+
+
+    /**
+    *   Editar partido
+    */
+    public function editPartido( $id )
+    {
+        $partido = Partido::find( $id );
+        
+        if( $partido ) //Existe partido
+        {
+            //regresar vista de editar
+            return View::make( 'administrador.editarpartidos', array('partido' => $partido) );
+        }
+        
+        //No existe y hay que regresar a la principal
+        return Redirect::to('administrador/partido');
+
+    }
+
+
 
     /**
     *	Almacenar en la DB un candidato y su respectivo partido

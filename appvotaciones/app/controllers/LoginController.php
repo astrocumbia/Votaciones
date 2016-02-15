@@ -11,6 +11,30 @@ class LoginController extends BaseController {
         $funcionario1 = Input::get('funcionario1');
         $funcionario2 = Input::get('funcionario2');
         $funcionario3 = Input::get('funcionario3');
+
+        $pw = $funcionario1.$funcionario2.$funcionario3;
+        $MAC = "ea616bdc-80d5-36ff-9495-f7cb678d632d";
+		// $user = Input::get('nombre');
+  //       $password = Input::get('password');
+
+		$log = Auth::attempt(array('MAC' => $MAC,'password'=>$pw  ) );
+		if ($log) {
+			return View::make('pruebas.sesioniniciada');
+		}else{
+			return View::make('pruebas.mensaje')
+                    ->with('inputs',Input::all())
+                    ->with('error_login',"Fallo")
+                    ->with('log_error',"¡usuario o contraseña invalidos!");
+		}
+	}
+	public function logout(){
+		Auth::logout();
+		return Redirect::to('/')->with('log_despedida','¡Has cerrado sesión correctamente!.');
+	}
+
+	public function index(){
+		//si se ha iniciado sesión no dejamos volver
+
         // $user = Input::get('nombre');
   //       $password = Input::get('password');
         // $log = Auth::attempt(     array('nombre' => $user,'password'=>$password  ) );

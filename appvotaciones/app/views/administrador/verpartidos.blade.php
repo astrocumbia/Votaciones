@@ -29,15 +29,15 @@
 			  <tbody>
 			  	@foreach( $partidos as $partido )
 				<tr>
-			  		<td>1</td>
+			  		<td>{{$partido->id}}</td>
 			  		<td>{{$partido->nombre}}</td>
 			  		<td>
 			  			<img src="{{url('')}}/img/partidos/{{$partido->logo}}" alt="..." class="img-rounded" height="50" width="50">
 			  		</td>
 			  		<td>
-			  			<button type="button" class="btn btn-warning">
+			  			<a class="btn btn-warning" href="{{url('administrador/partido/edit')}}/{{$partido->id}}">
 			  				<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-			  			</button>
+			  			</a>
 			  			<button type="button" class="btn btn-danger">
 			  				<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 			  			</button>
@@ -49,3 +49,4 @@
 		</div>
 	</div>
 
+<

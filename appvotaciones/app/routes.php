@@ -35,10 +35,8 @@ Route::group(array('prefix' => 'administrador'), function()
 		});
 
 		//Editar Partido
-		Route::get('edit',function(){
-			echo 'administrador/partido/edit';
-			//return View::make('administrador.nuevopartido');
-		});
+		Route::get('edit/{id}', array('uses'=>'AdminController@editPartido') );
+
 
 		//Guardar partido
 		Route::post('store', array('uses'=>'AdminController@storePartido') );
@@ -96,6 +94,7 @@ Route::group(array('prefix' => 'funcionario'), function()
 	Route::get('index',function(){
 		return View::make('funcionariodecasilla.loginfuncionariodecasilla');
 	});
+	Route::post('login',array('uses'=>'LoginController@login'));
 
 });
 
