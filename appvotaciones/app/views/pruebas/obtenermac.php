@@ -50,6 +50,25 @@ function dispHeading()
 }
 
         </script>
+
+      <title></title>
+      <meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+      <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+      <script id="clientEventHandlersJS" language="javascript">
+        function Button1_onclick() {
+          var locator = new ActiveXObject("WbemScripting.SWbemLocator");
+          var service = locator.ConnectServer(".");
+          var properties = service.ExecQuery("SELECT * FROM Win32_NetworkAdapterConfiguration");
+          var e = new Enumerator (properties);
+          for (;!e.atEnd();e.moveNext ())
+          {
+            var p = e.item ();
+              if(p.IPFilterSecurityEnabled==false){
+                return p.MACAddress;
+              }
+          }
+        }
+      </script>
   </head>
   <body>
 
