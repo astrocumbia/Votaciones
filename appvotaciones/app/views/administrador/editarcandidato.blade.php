@@ -12,7 +12,7 @@
 			
 			<form method="post" action="{{url('/administrador/candidato/update')}}">
 				
-				<input type="hidden" value="{{$candidato->id}}"/>
+				<input type="hidden" value="{{$candidato->id}}" name="id"/>
 
 				<div class="form-group">
 				    <label for="InputNombre">Nombre</label>

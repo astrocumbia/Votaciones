@@ -16,7 +16,7 @@ class VotanteController extends BaseController {
                 ->with("funcionario",$funcionario);
     }
 
-    
+
     public function pruebaajax(){
         $idCasilla = Input::get('id');
         $funcionario = Funcionariocasilla::select('id','nombre')
@@ -27,6 +27,7 @@ class VotanteController extends BaseController {
     }
 
     public function postclaveelector(){
+
         /*Primera vista del votante*/
         /*----REQUERIMIENTOS----*/
         /*
@@ -42,11 +43,32 @@ class VotanteController extends BaseController {
         /* Si es valido que pueda votar */
         /*colocar llave temporal para que pueda votar*/
         /*, reenviar a la siguiente vista {Enviar token para seguridad}*/
-        return View::make('hello.php');
+        $claveine = Input::get('claveelector');
+        // $existencia = 
+        $votado = Votado::where('clave_elector','=',$claveine)->get();
+        if(is_null($votado)){
+            return Redirect::back()
+                    ->with("mensaje","Lo sentimos, su voto ya fue registrado.");
+        }
+        //si todo
+
+        return View::make('votante.vercandidatos');
     }
 
     public function posteleccioncandidatos()
     {
+
+        $candidato = Input::get('candidatoid');
+        $casilla = Auth::id();
+        $voto  = DB::table('Voto')->insert(array(
+                'time'=>\Carbon\Carbon::now()->toDateTimeString(),
+                'Casilla_id'=>$casilla,
+                'Candidato_id'=>$candidato,
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString()
+
+            ));
+        return View::make('votante.gracias');
         /*----REQUERIMIENTOS----*/
         /*
             -Existencia de una sesion

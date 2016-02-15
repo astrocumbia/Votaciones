@@ -133,6 +133,22 @@ class AdminController extends BaseController {
         return Redirect::to('administrador/candidato');
     }
 
+
+    /**
+    *   Actualizar nuevo candidato
+    **/
+    public function updateCandidato()
+    {
+        $candidato = Candidato::find( Input::get('id') );
+        if( $candidato )
+        {
+            $candidato->Nombre = Input::get('InputNombre');
+            $candidato->Partido_id = Input::get('InputPartido');
+            $candidato->save();
+        }
+        return Redirect::to('administrador/candidato');
+    }
+
     /**
     *   Guardar nuevo candidato
     **/
@@ -147,6 +163,7 @@ class AdminController extends BaseController {
     }
 
     /**
+<<<<<<< HEAD
     *   Obtener estadisticas
     **/
     public function getVotos()
@@ -161,4 +178,24 @@ class AdminController extends BaseController {
     }
 
     
+=======
+    *   Eliminar Candidato
+    */
+    public function deleteCandidato( $id )
+    {
+        $candidato = Candidato::find( $id );
+        
+        if( $candidato ) //Existe partido
+        {
+            //eliminar partido
+            $candidato->delete();
+        }
+        
+        //No existe y hay que regresar a la principal
+        return Redirect::to('administrador/candidato');
+        
+    }
+
+
+>>>>>>> 12ebe4fa071ab085679c0665bf6a5816b31fb0b5
 }
