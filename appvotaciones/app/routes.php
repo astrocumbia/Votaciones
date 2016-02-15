@@ -138,13 +138,13 @@ Route::group(array('prefix' => 'funcionario'), function()
 /*++++++++++++++++++++++++++ Vistas votante ++++++++++++++++++++++++++*/
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-Route::group(array('prefix' => 'votante'), function()
+Route::group(array('before'=>'auth','prefix' => 'votante'), function()
 {
 	Route::get('index',function(){
 		return View::make('votante.introducirclaveelector');
 	});
 
-	Route::get('ingresarine',array('before'=>'auth',function(){
+	Route::get('ingresarine',array(function(){
 		return View::make('votante.introducirclaveelector');
 	}));
 	Route::get('candidatos',function(){
