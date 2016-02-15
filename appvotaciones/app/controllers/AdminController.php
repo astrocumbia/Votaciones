@@ -178,9 +178,7 @@ class AdminController extends BaseController {
     }
 
     
-=======
-    *   Eliminar Candidato
-    */
+
     public function deleteCandidato( $id )
     {
         $candidato = Candidato::find( $id );
@@ -197,5 +195,4 @@ class AdminController extends BaseController {
     }
 
 
->>>>>>> 12ebe4fa071ab085679c0665bf6a5816b31fb0b5
 }
