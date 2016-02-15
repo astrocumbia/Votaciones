@@ -8,8 +8,9 @@
 	</style>
 	
 
-	<div class="container margencontenedorprincipal">
-		<div class="row bg-primary">
+	<div class="container margencontenedorprincipal ">
+		<form action="">
+			<div class="row bg-primary borderedondo">
 
 			<table>
 				<tr>
@@ -18,35 +19,47 @@
 							<img src={{ asset('img/candidato1.png') }} class="img-responsive img-rounded" >
 						</div>
 						<div id="nosel1" class="col-md-2">
-						<img  onclick="selecciona('1')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
-					</div>
+							<img  onclick="selecciona('1')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
+						</div>
+						<div  id="sel1" class="col-md-2 ">
+							<img   src={{ asset('img/seleccionado.png') }} class="img-responsive" >
+						</div>
 					</td>
 				  	<td>
 					  	<div class="col-md-8">
-							<img src={{ asset('img/candidato1.png') }} class="img-responsive img-rounded" >
+							<img src={{ asset('img/candidato2.png') }} class="img-responsive img-rounded" >
 						</div>
-						<div id="nosel1" class="col-md-2">
-						<img  onclick="selecciona('1')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
-					</div>
+						<div id="nosel2" class="col-md-2">
+							<img  onclick="selecciona('2')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
+						</div>
+						<div  id="sel2" class="col-md-2 ">
+							<img   src={{ asset('img/seleccionado.png') }} class="img-responsive" >
+						</div>
 					</td>
 				</tr>
 				 
 				<tr>
 					 <td>
 					  	<div class="col-md-8">
-							<img src={{ asset('img/candidato1.png') }} class="img-responsive img-rounded" >
+							<img src={{ asset('img/candidato3.png') }} class="img-responsive img-rounded" >
 						</div>
-						<div id="nosel1" class="col-md-2">
-						<img  onclick="selecciona('1')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
+						<div id="nosel3" class="col-md-2">
+						<img  onclick="selecciona('3')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
 					</div>
+						<div  id="sel3" class="col-md-2 ">
+							<img   src={{ asset('img/seleccionado.png') }} class="img-responsive" >
+						</div>
 					</td>
 				  	<td>
 					  	<div class="col-md-8">
 							<img src={{ asset('img/candidato1.png') }} class="img-responsive img-rounded" >
 						</div>
-						<div id="nosel1" class="col-md-2">
-						<img  onclick="selecciona('1')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
-					</div>
+						<div id="nosel4" class="col-md-2">
+							<img  onclick="selecciona('4')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
+						</div>
+						<div  id="sel4" class="col-md-2 ">
+							<img   src={{ asset('img/seleccionado.png') }} class="img-responsive" >
+						</div>
 					</td>
 				</tr>
 			</table>
@@ -54,6 +67,7 @@
 	      		<button class="btn btn-block btn-default">Finalizar</button>
 			</div>
 		</div>
+		</form>
 	</div>
 		<!--
 		<div class="row bg-primary">
