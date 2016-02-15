@@ -32,6 +32,7 @@
 			</div>
 		</div>
 
+
 		<div class="row" style="margin:10px;">
 			<div class="col-md-offset-3 col-md-6">
 				<a class="btn btn-primary btn-block" href="{{url('/administrador/verfuncionario')}}">
