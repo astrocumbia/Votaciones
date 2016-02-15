@@ -12,18 +12,7 @@
 		{{ Form::open(array('url'=>'votante/posteleccioncandidatos')) }}
 			<div class="row bg-primary borderedondo">
 			{{ Form::hidden('candidatoid', null, array('id'=>'candidatoid')) }}
-
-				<div class="col-sm-6 col-md-4">
-				    <div class="thumbnail">
-				      <img src="..." alt="...">
-				      <div class="caption">
-				        <h3>Thumbnail label</h3>
-				        <p>...</p>
-				        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-				      </div>
-				    </div>
-				  </div>
-			<!-- <table>
+			<table>
 				<tr>
 				  	<td>
 					  	<div class="col-md-8">
@@ -77,7 +66,7 @@
 			<div class="col-md-12" >
 	      		<button class="btn btn-block btn-default" type="submit">Finalizar</button>
 			</div>
-		</div> -->
+		</div>
 		{{ Form::close() }}
 	</div>
 	

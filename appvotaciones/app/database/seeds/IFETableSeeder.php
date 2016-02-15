@@ -22,7 +22,7 @@ class IFETableSeeder extends Seeder {
         	'nombre'=>$faker->name,
         	'clave_elector'=>$cad,
         	'clave_elector'=>print($cad),
-        	'huella'=>'123456',
+        	// 'huella'=>'123456',
         	'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => \Carbon\Carbon::now()->toDateTimeString()
             ));
