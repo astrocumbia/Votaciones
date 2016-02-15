@@ -28,7 +28,7 @@ return array(
 	|
 	*/
 
-	'model' => 'Funcionariocasilla',
+	'model' => 'Casilla',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -41,8 +41,8 @@ return array(
 	|
 	*/
 
-	'table' => 'Funcionario_casilla',
-	'username' => 'nombre',
+	'table' => 'Casilla',
+	'username' => 'MAC',
 	'password' => 'password',
 
 	/*
@@ -59,7 +59,7 @@ return array(
 	| they have less time to be guessed. You may change this as needed.
 	|
 	*/
-
+	'lifetime'=>5,
 	'reminder' => array(
 
 		'email' => 'emails.auth.reminder',

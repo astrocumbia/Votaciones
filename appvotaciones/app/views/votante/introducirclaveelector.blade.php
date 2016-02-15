@@ -13,7 +13,7 @@
 		<div class="row bg-primary borderedondo">
 			<div class="col-md-12">
 				<form action="" method="POST">
-					<div class="col-md-4 col-md-offset-2">
+					<div class="col-md-8" style="margin-top: 8%;">
 						<div class="row margencontendorcentral">
 							<div class="form-group text-center">
 								<label for="claveelector">Introduzca su clave de elector:</label>

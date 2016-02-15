@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', array('uses'=>'VotanteController@index'));
+Route::get('/', array('before'=>'auth','uses'=>'VotanteController@index'));
 
 Route::get('login', function()
 {
@@ -100,6 +100,7 @@ Route::group(array('prefix' => 'funcionario'), function()
 	Route::get('index',function(){
 		return View::make('funcionariodecasilla.loginfuncionariodecasilla');
 	});
+	Route::post('login',array('uses'=>'LoginController@login'));
 
 });
 
