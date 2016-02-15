@@ -119,3 +119,11 @@ Hice una carpeta layouts en "Votaciones/appvotaciones/app/views/layouts", dentro
 
 Con esto obtendrán la plantilla y no tendrán que incluir bootstrap.
 Todo su HTML debe estar dentro de @section('body') y @endsection
+
+
+----- IRVIN 14 febrero ----
+Agregada la ruta /administrador/partido/new
+		 /administrador/partido/
+
+Estoy agregando partidos y candidatos 
+
