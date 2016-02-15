@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', array('uses'=>'VotanteController@index'));
+Route::get('/', array('before'=>'auth','uses'=>'VotanteController@index'));
 
 Route::get('login', function()
 {

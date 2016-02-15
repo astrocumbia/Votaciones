@@ -19,7 +19,7 @@ class LoginController extends BaseController {
 
 		$log = Auth::attempt(array('MAC' => $MAC,'password'=>$pw  ) );
 		if ($log) {
-			return View::make('pruebas.sesioniniciada');
+			return Redirect::to('votante/ingresarine');
 		}else{
 			return View::make('pruebas.mensaje')
                     ->with('inputs',Input::all())
@@ -27,6 +27,7 @@ class LoginController extends BaseController {
                     ->with('log_error',"¡usuario o contraseña invalidos!");
 		}
 	}
+
 	public function logout(){
 		Auth::logout();
 		return Redirect::to('/')->with('log_despedida','¡Has cerrado sesión correctamente!.');
@@ -44,20 +45,17 @@ class LoginController extends BaseController {
         //  return View::make('pruebas.mensaje')->with('error_login',Input::get('nombre'))->with('log_error',"¡usuario o contraseña invalidos!");
         // }
     }
-    public function logout(){
-        Auth::logout();
-        return Redirect::to('/')->with('log_despedida','¡Has cerrado sesión correctamente!.');
-    }
-    public function index(){
-        //si se ha iniciado sesión no dejamos volver
-        if(Auth::user())
-        {
-            return View::make('empleado.index');
-        }
-        //mostramos la vista views/login/index.blade.php pasando un título
-        return View::make('login')->with('title','Login');
-        //return View::make('login.index');
-    }
+
+    // public function index(){
+    //     //si se ha iniciado sesión no dejamos volver
+    //     if(Auth::user())
+    //     {
+    //         return View::make('empleado.index');
+    //     }
+    //     //mostramos la vista views/login/index.blade.php pasando un título
+    //     return View::make('login')->with('title','Login');
+    //     //return View::make('login.index');
+    // }
     public function crearunusuario()
     {
         $usuario = Funcionariocasilla::find(1);
