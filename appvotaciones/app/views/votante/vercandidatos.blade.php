@@ -12,7 +12,18 @@
 		{{ Form::open(array('url'=>'votante/posteleccioncandidatos')) }}
 			<div class="row bg-primary borderedondo">
 			{{ Form::hidden('candidatoid', null, array('id'=>'candidatoid')) }}
-			<table>
+
+				<div class="col-sm-6 col-md-4">
+				    <div class="thumbnail">
+				      <img src="..." alt="...">
+				      <div class="caption">
+				        <h3>Thumbnail label</h3>
+				        <p>...</p>
+				        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+				      </div>
+				    </div>
+				  </div>
+			<!-- <table>
 				<tr>
 				  	<td>
 					  	<div class="col-md-8">
@@ -66,73 +77,10 @@
 			<div class="col-md-12" >
 	      		<button class="btn btn-block btn-default" type="submit">Finalizar</button>
 			</div>
-		</div>
+		</div> -->
 		{{ Form::close() }}
 	</div>
-		<!--
-		<div class="row bg-primary">
-			<div class="row">
-		        <div class="col-md-4">
-					<img src={{ asset('img/candidato1.png') }} class="img-responsive img-rounded" >
-				</div>
-		        <div class="col-md-4">
-		        	<img src={{ asset('img/candidato2.png') }} class="img-responsive img-rounded" >
-				</div>
-		        <div class="col-md-4">
-		        	<img src={{ asset('img/candidato3.png') }} class="img-responsive img-rounded" >
-		        </div>
-					<div class="col-md-8">
-						<img src={{ asset('img/candidato1.png') }} class="img-responsive" >
-					</div>
-					<div id="nosel1" class="col-md-4">
-						<img  onclick="selecciona('1')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
-					</div>
-					<div  id="sel1" class="col-md-4 ">
-						<img   src={{ asset('img/seleccionado.png') }} class="img-responsive" >
-					</div>
-				</div>
-		        <div class="col-md-4">
-					<div class="col-md-8">
-						<img src={{ asset('img/candidato1.png') }} class="img-responsive" >
-					</div>
-					<div id="nosel2" class="col-md-4">
-						<img  onclick="selecciona('2')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
-					</div>
-					<div id="sel2" class="col-md-4 ">
-						<img   src={{ asset('img/seleccionado.png') }} class="img-responsive" >
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="col-md-8">
-						<img src={{ asset('img/candidato1.png') }} class="img-responsive" >
-					</div>
-					<div id="nosel3" class="col-md-4">
-						<img  onclick="selecciona('3')" src={{ asset('img/noseleccionado.png') }} class="img-responsive" >
-					</div>
-					<div id="sel3" class="col-md-4 ">
-						<img   src={{ asset('img/seleccionado.png') }} class="img-responsive" >
-					</div>
-				</div>
-      		</div>
-      		<div class="row" "bg-primary">
-      			<div id="nosel4" class="col-md-4">
-      				<img onclick="selecciona('4')" src={{ asset('img/noseleccionadoanular.png') }} >
-      			</div>
-      			<div id="sel4" class="col-md-4">
-      				<img src={{ asset('img/seleccionadoanular.png')}} >
-      			</div>
-      		</div>
-      		<div class="row">
-      			<div class="col-md-3">
-      				<button class="btn btn-block btn-default">Atras</button>
-
-      			</div>
-      			<div class="col-md-3 " >
-      				<button class="btn btn-block btn-default">Finalizar</button>
-      			</div>
-      		</div>
-		</div>
-		-->
+	
 	
 @stop
 
