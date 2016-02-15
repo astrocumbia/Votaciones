@@ -156,7 +156,7 @@ Route::group(array('prefix' => 'votante'), function()
 		return View::make('pruebas.pruebavotante');
 	});
 	Route::get('index', array('uses'=>'VotanteController@index'));
-	
+	Route::post('postclaveelector', array('uses'=>'VotanteController@postclaveelector'));
 
 	// Route::get('principal',function(){
 	// 	return View::make('votante.principal');
