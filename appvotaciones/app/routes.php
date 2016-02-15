@@ -61,25 +61,23 @@ Route::group(array('prefix' => 'administrador'), function()
 		//Principal
 		Route::get('/', array('uses'=>'AdminController@showCandidato') );
 		
-		//Agregar Partido
+		//Agregar Candidato
 		Route::get('new', array('uses'=>'AdminController@newCandidato') );
 
-		//Editar Partido
+		//Editar Candidato
 		Route::get('edit/{id}', array('uses'=>'AdminController@editCandidato') );
 
 
 		//Guardar candidato
 		Route::post('store', array('uses'=>'AdminController@storeCandidato') );
 
-		//Guardar partido
-		Route::post('update', array('uses'=>'AdminController@updatePartido') );
+		//Guardar Candidato
+		Route::post('update', array('uses'=>'AdminController@updateCandidato') );
 
-		//Borrar partido
-		Route::post('del/{id}', array('uses'=>'AdminController@deletePartido') );
+		//Borrar Candidato
+		Route::get('del/{id}', array('uses'=>'AdminController@deleteCandidato') );
 		
-		Route::get('nuevocandidato',function(){
-			return View::make('administrador.nuevocandidato');
-		});
+	
 	});
 
 
