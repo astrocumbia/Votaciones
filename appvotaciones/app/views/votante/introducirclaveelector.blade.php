@@ -41,4 +41,8 @@
 			</div>
 		</div>
 	</div>
-@stop
+@endsection
+
+@section('javascript')
+
+@endsection
