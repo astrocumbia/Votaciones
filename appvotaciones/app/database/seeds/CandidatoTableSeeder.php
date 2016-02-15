@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Hash;
 
-class IFETableSeeder extends Seeder {
+class CandidatoTableSeeder extends Seeder {
 
     public function run()
     {
@@ -18,7 +18,7 @@ class IFETableSeeder extends Seeder {
 
 
 
-        for ($i = 0; $i < 5; $i++)
+        for ($i = 0; $i < 5; $i++){
         	$partido = Partido::create(array(
         	'id'=>$i,
             'nombre'=>$faker->name,
@@ -28,17 +28,15 @@ class IFETableSeeder extends Seeder {
             'remember_token' =>"token_".$i
             ));
 
-
-        for ($i = 0; $i < 5; $i++)
             $candidato = Candidato::create(array(
-            'id'=>$i,
             'nombre'=>$faker->name,
-            'partido'=>$partido->name,
+            'Partido_id'=>$partido->id,
             'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
             'remember_token' =>"token_".$i
             ));
-        
+        }
+       
 
     }
 }

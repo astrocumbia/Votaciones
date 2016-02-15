@@ -56,6 +56,18 @@ class VotanteController extends BaseController {
 
     public function posteleccioncandidatos()
     {
+
+        $candidato = Input::get('candidatoid');
+        $casilla = Auth::id();
+        $voto  = DB::table('Voto')->insert(array(
+                'time'=>\Carbon\Carbon::now()->toDateTimeString(),
+                'Casilla_id'=>$casilla,
+                'Candidato_id'=>$candidato,
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString()
+
+            ));
+        return View::make('votante.gracias');
         /*----REQUERIMIENTOS----*/
         /*
             -Existencia de una sesion

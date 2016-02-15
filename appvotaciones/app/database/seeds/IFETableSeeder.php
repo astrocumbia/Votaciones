@@ -4,6 +4,11 @@ use Illuminate\Support\Facades\Hash;
 
 class IFETableSeeder extends Seeder {
 
+    public function getKey()
+    {
+        
+    }
+
     public function run()
     {
         $faker = Faker\Factory::create();
