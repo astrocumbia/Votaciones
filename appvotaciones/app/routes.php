@@ -141,9 +141,9 @@ Route::group(array('prefix' => 'votante'), function()
 		return View::make('votante.introducirclaveelector');
 	});
 
-	Route::get('ingresarine',function(){
+	Route::get('ingresarine',array('before'=>'auth',function(){
 		return View::make('votante.introducirclaveelector');
-	});
+	}));
 	Route::get('candidatos',function(){
 		return View::make('votante.vercandidatos');
 	});
@@ -153,8 +153,10 @@ Route::group(array('prefix' => 'votante'), function()
 	Route::get('prueba',function(){
 		return View::make('pruebas.pruebavotante');
 	});
+	Route::post('test', array('uses'=>'VotanteController@pruebaajax'));
 	Route::get('index', array('uses'=>'VotanteController@index'));
 	Route::post('postclaveelector', array('uses'=>'VotanteController@postclaveelector'));
+	Route::post('posteleccioncandidatos', array('uses'=>'VotanteController@posteleccioncandidatos'));
 
 	// Route::get('principal',function(){
 	// 	return View::make('votante.principal');
@@ -171,7 +173,7 @@ Route::get('getlogueo', function()
 	return View::make('pruebas.login');
 });
 Route::post('postlogueo', array('uses'=>'LoginController@login'));
-Route::get('testlogout', array('uses'=>'LoginController@logout'));
+Route::get('logout', array('uses'=>'LoginController@logout'));
 Route::get('crearunusuario', array('uses'=>'LoginController@crearunusuario'));
 
 Route::get('mac',function(){

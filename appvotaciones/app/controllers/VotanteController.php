@@ -51,15 +51,19 @@ class VotanteController extends BaseController {
                     ->with("mensaje","Lo sentimos, su voto ya fue registrado.");
         }
         //si todo
-
-        return View::make('votante.vercandidatos');
+        $candidatos = Candidato::paginate(3);
+        return View::make('votante.vercandidatos')
+                    ->with("candidatos",$candidatos);
     }
 
     public function posteleccioncandidatos()
     {
 
-        $candidato = Input::get('candidatoid');
+        $candidato = Input::get('candidato');
         $casilla = Auth::id();
+        if ($candidato == null) {
+           return Redirect::back()->with("mensaje","No pudimos recibir tu voto, intentalo de nuevo"); 
+        }
         $voto  = DB::table('Voto')->insert(array(
                 'time'=>\Carbon\Carbon::now()->toDateTimeString(),
                 'Casilla_id'=>$casilla,

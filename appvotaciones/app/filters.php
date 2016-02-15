@@ -48,8 +48,6 @@ Route::filter('auth', function()
 	// }
 	if(!Auth::check()){
 		return Redirect::to('funcionario/index');
-	}else{
-		return Redirect::to('votante/ingresarine');
 	}
 	// return true;
 });
