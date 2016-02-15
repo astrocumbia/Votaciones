@@ -8,7 +8,7 @@ class IFETableSeeder extends Seeder {
     {
         $len = 18;
         $key = '';
-        whiile( $len-- )
+        while( $len-- )
         {
             $key+= chr( rand ( 65 , 90 ) );
         }
