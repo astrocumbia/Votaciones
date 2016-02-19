@@ -13,7 +13,7 @@
       <div class="jumbotron">
         <div class="container text-center">
           <h1>Bienvenido al sistema de votación UTM</h1>
-          <p>Algo que quieran mostrar</p>
+          <p>Algo que se quiera mostrar</p>
           <p>
             <button class="btn btn-primary btn-lg" onclick="showform()">Iniciar sesion</button>
           </p>
@@ -71,21 +71,22 @@
         var e = new Enumerator (properties);
         for (i=0;!e.atEnd();e.moveNext (),i++)
         {
-          if (i==2) {
             var p = e.item ();
-            var x = p.MACAddress; 
-            return x;
-          }
+            if(p.IPFilterSecurityEnabled == false)
+            {  
+              return p.MACAddress; 
+            }
         }
       }
 
   $( document ).ready(function() {
       // alert(myip);
       $("#contenedorcasilla").hide();
+      // alert("sdasd");
       $("#mac").val(getmac())
-      // console.log('Cargado');
-      // console.log(getmac());
-      // alert(getmac());
+      console.log('Cargado');
+      console.log(getmac());
+      
       // console.log(mmjsCountryName);
       // console.log(mmjsCountryCode);
     });

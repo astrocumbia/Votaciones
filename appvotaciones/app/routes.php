@@ -24,6 +24,10 @@ Route::get('login', function()
 /*+++++++ La ruta para ver estas vistas quedaría 'administrador/* ' donde * es la ruta pasada en el get, por ejemplo el index quedaría "administrador/index" ++++++++++++++*/
 Route::group(array('prefix' => 'administrador'), function()
 {
+	Route::get('estat',function(){
+		$data = Voto::getVotos();
+		return Response::json( [ "votos"=> $data ], 200, [], JSON_NUMERIC_CHECK );
+	});
 	/*++++++++++++++++++++++++++ Vistas partido ++++++++++++++++++++++++++*/
 	Route::group(array('prefix' => 'partido'), function(){
 		
@@ -186,7 +190,7 @@ Route::get('mac',function(){
 	return View::make('pruebas.obtenermac');
 });
 
-
+Route::post('test', array('uses'=>'VotanteController@pruebaajax'));
 Route::get('img/partidos/{name}',  function($name){
 	return Response::download('/img/partidos/'.$name);
 });

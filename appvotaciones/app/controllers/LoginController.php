@@ -13,16 +13,20 @@ class LoginController extends BaseController {
         $funcionario3 = Input::get('funcionario3');
         $MAC = Input::get('mac');
         $pw = $funcionario1.$funcionario2.$funcionario3;
-        $MAC = "80:56:F2:47:7A:E3";
+        if ($MAC == "") {
+            return Redirect::back()
+                    ->with('mensaje',"¡Tu computadora no esta registrada!");
+        }
+        //$MAC = "80:56:F2:47:7A:E3";
 		// $user = Input::get('nombre');
-  //$password = Input::get('password');
+        //$password = Input::get('password');
 
 		$log = Auth::attempt(array('MAC' => $MAC,'password'=>$pw  ) );
 		if ($log) {
 			return Redirect::to('votante/ingresarine');
 		}else{
 			return Redirect::back()
-                    ->with('mensaje',"¡usuario o contraseña invalidos!");
+                    ->with('mensaje',"¡contraseñas incorectas!");
 		}
 	}
 

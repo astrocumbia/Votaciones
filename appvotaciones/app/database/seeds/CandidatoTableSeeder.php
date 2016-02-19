@@ -9,28 +9,38 @@ class CandidatoTableSeeder extends Seeder {
         $faker = Faker\Factory::create();
 
         
-        DB::table('Candidato')->delete();
-        DB::table('Partido')->delete();
+        //DB::table('Candidato')->delete();
+        //DB::table('Partido')->delete();
         
-        $logo='logo1';
-        for ($i = 0; $i < 5; $i++){
-        	$partido = Partido::create(array(
-        	// 'id'=>$i,
-            'nombre'=>$faker->name,
-            'logo'=>"logo_".$i,
-        	'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-            'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
-            'remember_token' =>"token_".$i
-            ));
-
-            $candidato = Candidato::create(array(
-            'nombre'=>$faker->name,
-            'Partido_id'=>$partido->id,
+        $partido = Candidato::create(array(
+            'id'=>0,
+            'nombre'=>"Voto Anulado",
+            'Partido_id'=>8,
             'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
-            'remember_token' =>"token_".$i
+            'remember_token' =>"token_"
             ));
-        }
+
+
+        // $logo='logo1';
+        // for ($i = 0; $i < 5; $i++){
+        // 	$partido = Partido::create(array(
+        // 	// 'id'=>$i,
+        //     'nombre'=>$faker->name,
+        //     'logo'=>"logo_".$i,
+        // 	'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        //     'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        //     'remember_token' =>"token_".$i
+        //     ));
+
+        //     $candidato = Candidato::create(array(
+        //     'nombre'=>$faker->name,
+        //     'Partido_id'=>$partido->id,
+        //     'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        //     'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+        //     'remember_token' =>"token_".$i
+        //     ));
+        // }
        
 
     }

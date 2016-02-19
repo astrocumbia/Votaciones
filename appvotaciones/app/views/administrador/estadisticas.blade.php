@@ -28,22 +28,15 @@
       // draws it.
       function drawChart() {
 
+        //datos de DB
+        $.get("{{url('/administrador/estat')}}", function(datos, status){
+           console.log( datos.votos );
+
         // Create the data table.
         var data = new google.visualization.DataTable();
-        var jsonData = $.ajax({
-          url: "/results",
-          type:"get"
-        });
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
-        data.addRows([
-          ['PRD', 3],
-          ['PRI DARTH VADER', 1],
-          ['PN (Partido Nacional)', 4],
-          ['PAN', 1]
-        ]);
-
-
+        data.addRows( datos.votos );
 
         // Set chart options
         var options = {'title':'Resultado de Elecciones',
@@ -51,8 +44,12 @@
                        'height':700};
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
+
+        });
+
+
       }
     </script>
   

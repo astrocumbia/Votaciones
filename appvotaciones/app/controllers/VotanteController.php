@@ -44,16 +44,29 @@ class VotanteController extends BaseController {
         /*colocar llave temporal para que pueda votar*/
         /*, reenviar a la siguiente vista {Enviar token para seguridad}*/
         $claveine = Input::get('claveelector');
+
+        if(!preg_match("/^[a-zA-Z0-9]{18}/",$claveine)){
+            return Redirect::back()
+                    ->with("mensaje","Lo sentimos, su formato de clave es incorrecta.");   
+        }
+
+        if( strlen($claveine) == 18){
+        $candidatos = Candidato::paginate(3);
+        return View::make('votante.vercandidatos')
+                    ->with("candidatos",$candidatos);
+        }
         // $existencia = 
+        else {
+           return Redirect::back()
+                    ->with("mensaje","Lo sentimos, su clave es incorrecta.");
+        }
         $votado = Votado::where('clave_elector','=',$claveine)->get();
         if(is_null($votado)){
             return Redirect::back()
                     ->with("mensaje","Lo sentimos, su voto ya fue registrado.");
         }
+        // $votorealizado = $
         //si todo
-        $candidatos = Candidato::paginate(3);
-        return View::make('votante.vercandidatos')
-                    ->with("candidatos",$candidatos);
     }
 
     public function posteleccioncandidatos()
@@ -63,6 +76,17 @@ class VotanteController extends BaseController {
         $casilla = Auth::id();
         if ($candidato == null) {
            return Redirect::back()->with("mensaje","No pudimos recibir tu voto, intentalo de nuevo"); 
+        }
+        if ($candidato == 0) {
+            $voto  = DB::table('Voto')->insert(array(
+                'time'=>\Carbon\Carbon::now()->toDateTimeString(),
+                'Casilla_id'=>$casilla,
+                'Candidato_id'=>11,
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString()
+
+            ));
+            return View::make('votante.gracias');
         }
         $voto  = DB::table('Voto')->insert(array(
                 'time'=>\Carbon\Carbon::now()->toDateTimeString(),

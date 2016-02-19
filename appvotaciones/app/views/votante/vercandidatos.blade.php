@@ -55,7 +55,7 @@
 			      <div class="caption">
 			        <h3>Anular voto</h3>
 			        <!-- <p>texto</p> -->
-			        <input required="required" class="" type="radio" name="candidato" value="0"> {{ $candidatos[2]->Nombre }}<br>
+			        <input required="required" class="" type="radio" name="candidato" value="0"> "Anular voto"<br>
 			    </div>
 			  </div>
 			</div>
