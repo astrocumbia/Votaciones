@@ -117,8 +117,9 @@ Route::group(array('prefix' => 'administrador'), function()
 		return View::make('administrador.verfuncionarios');
 	});
 	Route::get('estadisticas',function(){
-		return View::make('administrador.estadisticas');
+		return View::make('administrador.estadisticas', array('votos' =>  Voto::getVotos() ));
 	});
+
 });
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/

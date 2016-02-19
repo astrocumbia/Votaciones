@@ -1,5 +1,9 @@
 @extends('layouts.layoutbase')
 @section('body')
+
+  <?php 
+    print_r( $votos );
+  ?>
   <div class="container">
     <div class="text-center">
       <h3>Resultados</h3>
@@ -36,7 +40,20 @@
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
+<<<<<<< HEAD
         data.addRows( datos.votos );
+=======
+        data.addRows([
+          
+          
+          ['PRD', 3],
+          ['PRI DARTH VADER', 1],
+          ['PN (Partido Nacional)', 4],
+          ['PAN', 1]
+        ]);
+
+
+>>>>>>> 3af1123b83c65e4f4e6700538602c7efa227008f
 
         // Set chart options
         var options = {'title':'Resultado de Elecciones',
